@@ -119,9 +119,9 @@ export default function Header() {
 					</li>
 				</header>
 				<footer className="py-2 px-3 flex justify-between">
-					<li className='font-pacifico text-greenB text-[2.5rem]'>
+					<Link href="/" className='font-pacifico text-greenB text-[2.5rem]'>
 						ElTribo
-					</li>
+					</Link>
 					<li className='flex gap-[3.5rem] items-center text-[#1D1B20]'>
 						{data?.map((i, j) => (
 							j === 2 ? <div key={j}>

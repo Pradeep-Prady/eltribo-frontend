@@ -5,7 +5,7 @@ import ImageC from '../utils/ImageC';
 import ProductItem from '../products/ProductItem';
 import { GreenButtonSend } from '../common/greenButton';
 
-export default function ProdDisp({ heading, img, text, Static }) {
+export default function ProdDisp({ heading,productData, img, text, Static }) {
 	
 	const { product } = useSelector((store) => store.ProdsS);
 	const s = [{
@@ -35,9 +35,9 @@ export default function ProdDisp({ heading, img, text, Static }) {
 					<ImageC src={img} styles={'w-[85%] h-[13rem]'} />
 				:''}
 			</section>
-			<div className="flex justify-center gap-3">
+			<div className="flex flex-wrap justify-center gap-3">
 				{
-					data.slice(0, 3).map((i, j) => (
+					productData?.map((i, j) => (
 						<ProductItem data={i} key={j} />
 					))
 				}
