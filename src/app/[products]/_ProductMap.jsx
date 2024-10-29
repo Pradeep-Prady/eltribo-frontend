@@ -3,11 +3,13 @@
 
 
 import { useEffect, useState } from 'react';
-import Filters from '../../../components/products/Filters';
-import ProductItem from '../../../components/products/ProductItem';
+// import Filters from '../../../components/products/Filters';
+// import ProductItem from '../../../components/products/ProductItem';
 import { useDispatch, useSelector } from 'react-redux';
 import { ProductsSet } from '@/redux/slice/ProdsSlice';
 import { useParams } from 'next/navigation';
+import Filters from '../components/products/Filters';
+import ProductItem from '@/components/products/ProductItem';
 
 export default function ProductMap(props) {
 
