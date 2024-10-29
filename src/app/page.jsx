@@ -1,23 +1,22 @@
-import Support from '@/components/common/Support';
-import HomeForm from '@/components/forms/HomeForm';
-import About from '@/components/home/About';
-import Section1 from '@/components/home/Section1';
-import ProdDispC from '@/components/products/ProdDispC';
-import Header from '@/components/common/Header';
-import Footer from '@/components/common/Footer';
-import FAQ from '@/components/home/FAQ';
-import ReduxndQueryWrapper from '@/components/home/ReduxndQueryWrapper';
-import { bkend } from '@/axios/axiosInstance';
+import Support from "@/components/common/Support";
+import HomeForm from "@/components/forms/HomeForm";
+import About from "@/components/home/About";
+import Section1 from "@/components/home/Section1";
+import ProdDispC from "@/components/products/ProdDispC";
+import Header from "@/components/common/Header";
+import Footer from "@/components/common/Footer";
+import FAQ from "@/components/home/FAQ";
+import ReduxndQueryWrapper from "@/components/home/ReduxndQueryWrapper";
+import { bkend } from "@/axios/axiosInstance";
 
 export default async function Home() {
-
   // const response = await bkend.get('/getproduct');
   let response = null;
   try {
-    response = await bkend.get('/getproduct');
+    response = await bkend.get("/getproduct");
     console.log("🚀 ~ Home ~ response:", response.data.data);
   } catch (err) {
-    console.log('🚗', err);
+    console.log("🚗", err);
   }
 
   // try {
@@ -31,7 +30,6 @@ export default async function Home() {
     return (
       <>
         <div className="bg-[#F1FFF9]">
-        <Header />
           <ReduxndQueryWrapper>
             <Header />
           </ReduxndQueryWrapper>
@@ -49,5 +47,3 @@ export default async function Home() {
     );
   }
 }
-
-
