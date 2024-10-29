@@ -102,7 +102,7 @@ export default function Header() {
 		}
 	}
 	
-	if (temp) {
+	// if (temp) {
 		return (
 			<main className="">
 				<header className="flex justify-between gra1 py-2 px-3">
@@ -145,5 +145,5 @@ export default function Header() {
 	
 	
 		)
-	}
+	// }
 }
