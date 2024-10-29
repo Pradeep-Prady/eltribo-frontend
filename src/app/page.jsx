@@ -31,6 +31,7 @@ export default async function Home() {
     return (
       <>
         <div className="bg-[#F1FFF9]">
+        <Header />
           <ReduxndQueryWrapper>
             <Header />
           </ReduxndQueryWrapper>
