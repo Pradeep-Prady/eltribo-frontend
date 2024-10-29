@@ -4,7 +4,7 @@ import About from "@/components/home/About";
 import Section1 from "@/components/home/Section1";
 import ClientProvider from "@/components/utils/ClientProvider";
 import ProdDispC from "@/components/products/ProdDispC";
-import { bkend } from "../../../axios/axiosInstance";
+import { bkend } from "@/axios/axiosInstance";
 
 export default async function Home() {
   const response = await bkend.get("/getproduct");
