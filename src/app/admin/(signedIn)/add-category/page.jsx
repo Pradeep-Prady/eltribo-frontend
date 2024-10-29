@@ -1,10 +1,10 @@
 'use client';
 
+import { bkend } from '@/axios/axiosInstance';
 import { Roboto } from 'next/font/google';
 import React from 'react'
 import { useForm } from 'react-hook-form';
 import { useMutation } from 'react-query';
-import { bkend } from '../../../../../axios/axiosInstance';
 
 const roboto = Roboto({ subsets: ['latin'], weight: ['500'] });
 

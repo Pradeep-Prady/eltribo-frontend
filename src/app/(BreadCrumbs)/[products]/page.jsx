@@ -1,7 +1,8 @@
 import ClientProvider from '@/components/utils/ClientProvider';
  
 import ProductMap from './_ProductMap';
-import { bkend } from '../../../../axios/axiosInstance.js';
+ 
+import { bkend } from '@/axios/axiosInstance';
 
 export default async function ProductPage() {
 

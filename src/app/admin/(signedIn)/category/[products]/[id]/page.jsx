@@ -1,6 +1,6 @@
 'use client';
 
-import { bkend } from '../../../../../../../axios/axiosInstance';
+ 
 import React, { useEffect, useRef, useState } from 'react';
 import { useMutation } from 'react-query';
 import { useSelector } from 'react-redux';
@@ -13,6 +13,7 @@ import { useRouter } from 'next/navigation';
 import { MdDeleteOutline } from 'react-icons/md';
 
 const roboto = Roboto({ subsets: ['latin'], weight: ['400'] });
+import { bkend } from '@/axios/axiosInstance';
 
 export default function Page() {
 

@@ -1,12 +1,13 @@
 'use client';
 
 import { useMutation } from 'react-query';
-import { bkend } from '../../../../../axios/axiosInstance';
+ 
 import { useEffect, useState } from 'react';
 import { Roboto } from 'next/font/google';
 import { useDispatch, useSelector } from 'react-redux';
 import { categorySet } from '@/redux/slice/admin/ProductSlice';
 import Link from 'next/link';
+import { bkend } from '@/axios/axiosInstance';
 
 const roboto = Roboto({ subsets: ['latin'], weight: ['400'] });
 

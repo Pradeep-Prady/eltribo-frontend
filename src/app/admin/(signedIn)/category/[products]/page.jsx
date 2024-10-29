@@ -1,6 +1,8 @@
 'use client';
 
-import { bkend } from '../../../../../../axios/axiosInstance';
+ 
+import { bkend } from '@/axios/axiosInstance';
+
 import Image from 'next/image';
 import { useEffect, useState } from 'react';
 import { useMutation } from 'react-query';

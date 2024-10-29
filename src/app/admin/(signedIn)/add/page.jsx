@@ -1,6 +1,5 @@
 'use client';
 
-import { bkend } from '../../../../../axios/axiosInstance';
 import Image from 'next/image';
 import React, { useEffect, useRef, useState } from 'react';
 import { useForm } from 'react-hook-form';
@@ -8,6 +7,7 @@ import Carousel from 'react-multi-carousel';
 import 'react-multi-carousel/lib/styles.css';
 import { useMutation, useQueryClient } from 'react-query';
 import { Roboto } from 'next/font/google';
+import { bkend } from '@/axios/axiosInstance';
 
 const roboto = Roboto({ subsets: ['latin'], weight: ['500'] });
 

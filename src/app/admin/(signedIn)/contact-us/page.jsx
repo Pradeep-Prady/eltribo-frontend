@@ -1,12 +1,13 @@
 'use client';
 
-import { bkend } from '../../../../../axios/axiosInstance';
+ 
 import React, { useEffect, useState } from 'react'
 import { useMutation } from 'react-query';
 import { Roboto } from 'next/font/google';
 import { IoSearch } from 'react-icons/io5';
 import { BiCalendar } from 'react-icons/bi';
 import { TbAdjustmentsHorizontal } from 'react-icons/tb';
+import { bkend } from '@/axios/axiosInstance';
 
 const roboto = Roboto({ subsets: ['latin'], weight: ['700'] });
 

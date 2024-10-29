@@ -4,8 +4,9 @@ import React, { useEffect, useState } from 'react';
 import { Roboto } from 'next/font/google';
 import Link from 'next/link';
 import { useMutation } from 'react-query';
-import { bkend } from '../../../../../axios/axiosInstance';
+ 
 import Image from 'next/image';
+import { bkend } from '@/axios/axiosInstance';
 
 const roboto = Roboto({ subsets: ['latin'], weight: ['500'] });
 
