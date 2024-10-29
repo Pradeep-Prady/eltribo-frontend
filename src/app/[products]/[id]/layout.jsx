@@ -1,3 +1,4 @@
+import Footer from "@/app/components/common/Footer";
 import Header from "@/components/common/Header";
 import ReduxndQueryWrapper from "@/components/home/ReduxndQueryWrapper";
 
@@ -13,6 +14,8 @@ export default function RootLayout({ children }) {
         <Header />
       </ReduxndQueryWrapper>
       {children}
+
+      <Footer/>
     </>
   );
 }

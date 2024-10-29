@@ -1,5 +1,6 @@
 import Header from "@/components/common/Header"
 import ReduxndQueryWrapper from "@/components/home/ReduxndQueryWrapper"
+import Footer from "../components/common/Footer"
 
  
 export const metadata = {
@@ -12,8 +13,12 @@ export default function RootLayout({ children }) {
     <>
       {/* <BreadCrumb /> */}
 
-     
+      <ReduxndQueryWrapper>
+        <Header />
+      </ReduxndQueryWrapper>
       {children}
+      <Footer/>
+
     </>
   )
 }
