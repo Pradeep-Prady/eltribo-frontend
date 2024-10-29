@@ -5,11 +5,11 @@ import ReduxndQueryWrapper from "@/components/home/ReduxndQueryWrapper";
 export default function layout({ children }) {
   return (
     <>
-      {/* <ReduxndQueryWrapper>
+      <ReduxndQueryWrapper>
         <Header />
       </ReduxndQueryWrapper>
       {children}
-      <Footer /> */}
+      <Footer />
     </>
   );
 }

@@ -1,4 +1,3 @@
- 
 import Support from "@/components/common/Support";
 import HomeForm from "@/components/forms/HomeForm";
 import About from "@/components/home/About";
@@ -17,9 +16,9 @@ export default async function Home() {
         <Section1 />
         <Support />
         <About />
-        {/* <ClientProvider> */}
+        <ClientProvider>
           <ProdDispC data={response.data.data} />
-        {/* </ClientProvider> */}
+        </ClientProvider>
         <HomeForm />
       </>
     );
