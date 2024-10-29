@@ -27,7 +27,7 @@ export default async function Home() {
   //   console.log('🚗', err);
   // }
 
-  // if (response) {
+  if (response) {
     return (
       <>
         <div className="bg-[#F1FFF9]">
@@ -46,7 +46,7 @@ export default async function Home() {
         </div>
       </>
     );
-  // }
+  }
 }
 
 

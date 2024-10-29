@@ -12,9 +12,9 @@ export default function RootLayout({ children }) {
     <>
       {/* <BreadCrumb /> */}
 
-      <ReduxndQueryWrapper>
+      {/* <ReduxndQueryWrapper>
         <Header />
-      </ReduxndQueryWrapper>
+      </ReduxndQueryWrapper> */}
       {children}
     </>
   )
