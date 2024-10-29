@@ -10,12 +10,12 @@ export const metadata = {
 export default function RootLayout({ children }) {
   return (
     <>
-      <ReduxndQueryWrapper>
+      {/* <ReduxndQueryWrapper>
         <Header />
-      </ReduxndQueryWrapper>
+      </ReduxndQueryWrapper> */}
       {children}
 
-      <Footer/>
+      {/* <Footer/> */}
     </>
   );
 }
