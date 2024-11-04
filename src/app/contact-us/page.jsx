@@ -14,7 +14,7 @@ export default function page() {
         <ContactSection />
         <ContactForm />
       </main>
-      <Footer />
+      {/* <Footer /> */}
     </>
   );
 }

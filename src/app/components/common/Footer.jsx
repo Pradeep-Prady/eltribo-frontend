@@ -1,5 +1,7 @@
 import Link from 'next/link';
 import ImageC from '../utils/ImageC';
+import Image from 'next/image';
+import footerImage from "../../../../public/images/social/footerllogo.svg"
 
 export default function Footer() {
 
@@ -20,7 +22,9 @@ export default function Footer() {
 
 	return (
 		<footer>
-			<main className="evenPadding flex justify-evenly flex-wrap gap-y-3 max-lg:justify-center">
+
+			<Image src={footerImage?.src} alt='logo' className='w-[900px]' width={100} height={100} />
+			{/* <main className="evenPadding flex justify-evenly flex-wrap gap-y-3 max-lg:justify-center">
 				{values.map((i, j) => (
 					<section className='FCol gap-y-[1rem] w-[12.5rem]'>
 						<h1 className='font-pMedium text-[#1E1E1E] text-[1.375rem]'>{i.name}</h1>
@@ -42,7 +46,7 @@ export default function Footer() {
 						</ul>
 					</section>
 				))}	
-			</main>
+			</main> */}
 			<hr className='bg-[#79747E]' />
 			<section className="text-center mt-[2rem] mb-[1rem] text-[#79747E]">
 				©2024 el tribo-ventures all rights reserved

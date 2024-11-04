@@ -24,7 +24,7 @@ export default function Page() {
         />
         <Reviews />
       </main>
-	  <Footer/>
+	  {/* <Footer/> */}
     </>
   );
 }

@@ -41,7 +41,6 @@ export default async function Home() {
           </ReduxndQueryWrapper>
           <FAQ />
           <HomeForm />
-          <Footer />
         </div>
       </>
     );

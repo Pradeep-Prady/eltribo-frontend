@@ -1,5 +1,7 @@
 import Link from 'next/link';
 import ImageC from '../utils/ImageC';
+import footerImage from "../../../public/images/social/footerllogo.svg"
+import Image from 'next/image';
 
 export default function Footer() {
 
@@ -19,7 +21,9 @@ export default function Footer() {
 	}];
 
 	return (
-		<footer>
+		<footer className="w-full relative overflow-hidden">
+			<Image src={footerImage?.src} alt='logo' className='w-[500px] scale-[1.3] h-full absolute' width={100} height={100} />
+
 			<main className="evenPadding flex justify-evenly flex-wrap gap-y-3 max-lg:justify-center">
 				{values.map((i, j) => (
 					<section className='FCol gap-y-[1rem] w-[15rem]'>

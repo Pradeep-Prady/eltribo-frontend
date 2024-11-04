@@ -17,7 +17,7 @@ export default function RootLayout({ children }) {
         <Header />
       </ReduxndQueryWrapper> */}
       {children}
-      <Footer/>
+      {/* <Footer/> */}
 
     </>
   )
