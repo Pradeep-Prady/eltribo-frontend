@@ -3,7 +3,7 @@
 import { useSelector } from 'react-redux';
 import ImageC from '../utils/ImageC';
 import ProductItem from '../products/ProductItem';
-import { GreenButtonSend } from '../common/greenButton';
+import { GreenTextButton } from '@/app/components/common/greenButton';
 
 export default function ProdDisp({ heading,productData, img, text, Static }) {
 	
@@ -11,15 +11,15 @@ export default function ProdDisp({ heading,productData, img, text, Static }) {
 	const s = [{
 		name: 'Buscuit TCups',
 		description: 'Charming, artisan tea cups designed to enhance your tea-time experience',
-		img: ['social/ProdShow1.svg']
+		img: ['products/biscuits.png']
 	}, {
-		name: 'Buscuit TCups',
-		description: 'Charming, artisan tea cups designed to enhance your tea-time experience',
-		img: ['social/ProdShow2.svg']
+		name: 'Eco-Friendly Paper Bags',
+		description: 'Sustainable and durable, these paper bags are crafted',
+		img: ['products/paperbag.png']
 	}, {
-		name: 'Buscuit TCups',
-		description: 'Charming, artisan tea cups designed to enhance your tea-time experience',
-		img: ['social/ProdShow3.svg']
+		name: 'Napkins',
+		description: 'Beautifully napkins that add a touch of cultural artistry to any table setting',
+		img: ['products/napkin.png']
 	}];
 
 
@@ -35,15 +35,33 @@ export default function ProdDisp({ heading,productData, img, text, Static }) {
 					<ImageC src={img} styles={'w-[85%] h-[13rem]'} />
 				:''}
 			</section>
-			<div className="flex flex-wrap justify-center gap-3">
+			
 				{
-					productData?.map((i, j) => (
+					productData ? 
+
+					<div className="grid grid-cols-3 w-full myPadX justify-center gap-5 lg:gap-10">
+
+{					productData && productData?.map((i, j) => (
 						<ProductItem data={i} key={j} />
 					))
 				}
-			</div>
+					</div>
+					:
+
+					<div className="grid grid-cols-3 w-full myPadX justify-center gap-5 lg:gap-10">
+					
+					{					s?.map((i, j) => (
+						<ProductItem data={i} key={j} />
+					))
+				} 
+
+</div>
+				}
+			
 			<div className='w-full flex justify-center my-[3.5rem]'>
-				<GreenButtonSend text={text ? 'Explore Our Products' : 'View More'} />
+				<GreenTextButton text={ 'View More'} />
+
+
 			</div>
 		</main>
 		)

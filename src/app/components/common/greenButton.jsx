@@ -2,7 +2,7 @@ import { IoIosArrowForward } from "react-icons/io";
 
 export default function GreenButton(props) {
 	return (
-		<button className={`text-white bg-greenB flex gap-3 w-fit font-pRegular items-center rounded-full py-[0.8rem] px-[1.5rem] ${props.fontL ? 'text-[1.1rem]' : 'text-[0.85rem]'}`} onClick={props.click}>{props.text}
+		<button className={`text-white bg-greenB flex gap-3 w-fit font-pRegular items-center rounded-full py-[0.8rem] px-[1.2rem] ${props.fontL ? 'text-[1.1rem]' : 'text-[0.85rem]'}`} onClick={props.click}>{props.text}
 			<IoIosArrowForward size={20} />
 		</button>
 	)
@@ -34,5 +34,11 @@ export function Quantity(props) {
 			<li className='px-[3rem]'>{props.quantity}</li>
 			<li className='hvrPointer' onClick={props.plus}>+</li>
 		</ul>
+	)
+}
+export function GreenTextButton(props) {
+	return (
+		<button className={` text-greenB text-center font-pRegular hover:underline px-[1.5rem] py-[0.8rem] text-[1.1rem]`}  >{props.text}
+		</button>
 	)
 }
