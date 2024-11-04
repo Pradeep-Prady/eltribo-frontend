@@ -1,6 +1,6 @@
 import { IoIosArrowForward } from "react-icons/io";
 
-export default function GreenButton(props) {
+export function GreenButton(props) {
 	return (
 		<button className={`text-white bg-greenB flex gap-3 w-fit font-pRegular items-center rounded-full py-[0.8rem] px-[1.2rem] ${props.fontL ? 'text-[1.1rem]' : 'text-[0.85rem]'}`} onClick={props.click}>{props.text}
 			<IoIosArrowForward size={20} />

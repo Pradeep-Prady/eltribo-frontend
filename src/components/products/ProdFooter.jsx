@@ -15,7 +15,7 @@ export default function ProdFooter() {
 
 	if (additional) {
 		return (
- 			<main className='bg-[#F5F5F5] space-y-[2rem] px-[3rem] py-[3rem]'>
+ 			<main className='bg-[#ffffff] space-y-[2rem] px-[3rem] py-[3rem]'>
 				<header className='flex justify-center gap-[2rem] text-[#938F96] font-pRegular'>
 					{Object.keys(additional).map((i, j) => (
 						<li key={j} onClick={() => setContent(additional[i])}

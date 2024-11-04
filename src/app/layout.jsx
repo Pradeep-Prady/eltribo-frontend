@@ -3,6 +3,7 @@ import '../styles/fonts.css';
 import '../styles/globals.css';
 import Header from '@/components/common/Header';
 import Footer from '@/components/common/Footer';
+import ReduxndQueryWrapper from '@/components/home/ReduxndQueryWrapper';
 
 export default function RootLayout({ children }) {
 
@@ -12,6 +13,9 @@ export default function RootLayout({ children }) {
         <Head />
       </head>
       <body>
+      <ReduxndQueryWrapper>
+        <Header />
+      </ReduxndQueryWrapper>
         {children}
       </body>
     </html>

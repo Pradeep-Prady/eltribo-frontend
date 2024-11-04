@@ -91,5 +91,5 @@ input::-webkit-inner-spin-button {
 
 
 .myPadX{
-  @apply px-5 sm:px-10 md:px-20 lg:px-36
+  @apply px-5 sm:px-10 md:px-20 lg:px-20 xl:px-32 2xl:px-10
 }

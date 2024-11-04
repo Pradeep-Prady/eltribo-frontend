@@ -27,13 +27,13 @@ export default function DropDownC({validate, options: {main, heading, body}, set
 
 	if (heading && body) {
 		return (
-			<main className={`${main.tw} select-none`}>
-				<div className={`${heading.tw}`} onClick={() => setDisp(true)}>
+			<main className={`${main.tw} select-none `}>
+				<div className={`  flex items-center gap-2`} onClick={() => setDisp(true)}>
 					{headingText ? headingText : heading.text}
 					<IoIosArrowDown className={`${disp ? '-rotate-180' : ''}`} />
 				</div>
 				<aside className={`fixed FullCover z-20 ${disp ? 'block' : 'hidden'}`} onClick={() =>setDisp(false)}></aside>
-				<ul className={`${disp ? 'block' : 'hidden'} z-30 ${body.tw}`} ref={items}>
+				<ul className={` w-[170px] ${disp ? 'block' : 'hidden'} z-30 ${body.tw}`} ref={items}>
 					{Object.entries(body.items).map((i, j) => (
 						<li key={j} onClick={() => {
 							i[1]?.data ? i[1].click(i[1].data) : ''

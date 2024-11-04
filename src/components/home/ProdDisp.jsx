@@ -3,7 +3,7 @@
 import { useSelector } from 'react-redux';
 import ImageC from '../utils/ImageC';
 import ProductItem from '../products/ProductItem';
-import { GreenTextButton } from '@/app/components/common/greenButton';
+import { GreenTextButton, GreenButton } from '@/app/components/common/greenButton';
 
 export default function ProdDisp({ heading,productData, img, text, Static }) {
 	
@@ -45,24 +45,36 @@ export default function ProdDisp({ heading,productData, img, text, Static }) {
 						<ProductItem data={i} key={j} />
 					))
 				}
+				
 					</div>
 					:
 
-					<div className="grid grid-cols-3 w-full myPadX justify-center gap-5 lg:gap-10">
+					<div className="grid grid-cols-3 my-[3.5rem] w-full myPadX justify-center gap-5 lg:gap-10">
 					
 					{					s?.map((i, j) => (
 						<ProductItem data={i} key={j} />
 					))
 				} 
 
+				
+
 </div>
 				}
 			
+
+			{
+			!Static && 
+
+		 
+
 			<div className='w-full flex justify-center my-[3.5rem]'>
 				<GreenTextButton text={ 'View More'} />
 
 
 			</div>
+
+			}
+			
 		</main>
 		)
 	}
