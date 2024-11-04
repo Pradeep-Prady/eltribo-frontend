@@ -42,7 +42,7 @@ export default function FAQ() {
 	}
 
 	return (
-		<main className="FColC">
+		<main className="FColC mb-5">
 			<h1 className="font-pMedium text-[2rem]">Eltribo FAQ</h1>
 			{values.map((item, index) => (
 				<div className="w-[80%] py-7 border-b-2" key={index}>

@@ -32,7 +32,7 @@ export default function ProdDisp({ heading,productData, img, text, Static }) {
 			<h1 className="FColC gap-5 font-pMedium text-[2rem] mb-[1rem]">{heading}</h1>
 			<section className="flex justify-center">
 				{img ? 
-					<ImageC src={img} styles={'w-[85%] h-[13rem]'} />
+					<ImageC src={img} styles={'w-full h-[15rem]'} />
 				:''}
 			</section>
 			
