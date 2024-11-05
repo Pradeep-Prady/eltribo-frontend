@@ -199,7 +199,7 @@ import { useDispatch } from "react-redux";
 import { ProductsSet } from "@/redux/slice/ProdsSlice";
 import { useRouter } from "next/navigation";
 import { FiMenu, FiX } from "react-icons/fi";
-
+import { IoCloseOutline } from "react-icons/io5";
 export default function Header() {
   const data = [
     { id: 1, name: "Home", path: "/" },
@@ -298,7 +298,9 @@ export default function Header() {
 
   const handleLinkClick = (id) => {
     setActiveId(id);
+    if (isMenuOpen) toggleMenu(); // Close menu only if it is open
   };
+  
 
   const toggleMenu = () => {
     setIsMenuOpen(!isMenuOpen);
@@ -327,12 +329,22 @@ export default function Header() {
         </header>
 
         <footer className="py-2 px-3 flex justify-between">
-          <Link href="/" className="font-pacifico text-greenB text-[1.8rem] md:text-[2.5rem]">
+          <Link href="/" className="font-pacifico text-greenB text-[1.7rem] md:text-[2.5rem]">
             ElTribo
           </Link>
 
           <div className="flex md:hidden items-center justify-center">
-            <FiMenu onClick={toggleMenu} />
+           
+           
+           {
+            isMenuOpen ?
+            <IoCloseOutline className="text-[24px] text-greenB" onClick={toggleMenu} />
+:
+<FiMenu className="text-[24px] text-greenB" onClick={toggleMenu} />
+
+           } 
+
+
           </div>
 
           <li className="hidden md:flex gap-[3.5rem] items-center text-[#1D1B20]">
@@ -350,7 +362,10 @@ export default function Header() {
               ) : (
                 <Link href={item.path} key={item.id}>
                   <div
-                    onClick={() => handleLinkClick(item.id)}
+                    onClick={() => 
+                      handleLinkClick(item.id)
+                       
+                    }
                     className={`${activeId === item.id ? "font-bold text-greenB" : ""}`}
                   >
                     {item.name}

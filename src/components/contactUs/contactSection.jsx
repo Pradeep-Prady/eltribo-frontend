@@ -17,9 +17,9 @@ export default function ContactSection() {
 	}];
 
 	return (
-		<main className="bg-[#F1FFF9] evenPadding flex justify-evenly text-[#605D64]">
+		<main className="bg-[#F1FFF9] evenPadding flex flex-col gap-3 md:gap-0 md:flex-row justify-evenly text-[#605D64]">
 			{data.map((i, j) => (
-				<section className={`FCol items-center w-[20rem] gap-5 text-center ${ j===1 ? 'border-x-2' : ''}`}>
+				<section className={`FCol items-center md:w-[20rem] gap-5 text-center ${ j===1 ? 'md:border-x-2' : ''}`}>
 					<ImageC src={`${i.img}`} styles='rounded-xl h-[5rem] w-[5rem]' />
 					<h1 className='text-[2rem] text-black'>{i.heading}</h1>
 					{i.body}

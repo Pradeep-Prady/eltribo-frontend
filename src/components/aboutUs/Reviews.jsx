@@ -76,7 +76,7 @@ export default function Reviews() {
 	return (
 		<>
 			<motion.main className="px-3 md:px-[2rem] bg-[#F1FFF9] evenPadding">
-				<div className='text-[2.5rem] font-pMedium text-center'>Reviews From Satisfied Customers</div>
+				<div className='text-[2.2rem]  md:text-[2.5rem] font-pMedium text-center'>Reviews From Satisfied Customers</div>
 				<section className="rounded-xl p-3 md:p-[2rem] h-[14rem] bg-[#80AF81] mt-[2rem] w-[90%] md:w-[80%] m-auto">
 					<aside className="h-full w-full rounded-xl flex gap-5 overflow-auto hideScroll" ref={carousal}>
 						{data.map((i, j) => (
