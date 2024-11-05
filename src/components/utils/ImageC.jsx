@@ -12,7 +12,7 @@ export default function ImageC(props) {
 		<div className={`relative ${props.styles}`} onClick={props.onclick}>
 			<Image priorit='true'  
 			 src={`${props.src.startsWith('data:', 0) ? `${props.src}` : `/images/${props.src}`}`}
-			  alt='img'   fill className="w-full h-auto bject-cover"/>
+			  alt='img'   fill className="w-full h-auto o bject-cover"/>
 		</div>
 	)
 }

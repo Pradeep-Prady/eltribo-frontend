@@ -45,9 +45,9 @@ export default function FAQ() {
 		<main className="FColC mb-5">
 			<h1 className="font-pMedium text-[2rem]">Eltribo FAQ</h1>
 			{values.map((item, index) => (
-				<div className="w-[80%] py-7 border-b-2" key={index}>
+				<div className="w-[90%] md:w-[80%] py-7 border-b-2" key={index}>
 					<header className={`flex items-center justify-between  ${values.length - 1 > index && !item.show ? 'border-b-' : ''}`}>
-						<h1 className="text-[1.5rem]  ">{item.name}</h1>
+						<h1 className="text-[18px] md:text-[1.5rem]  ">{item.name}</h1>
 						<span onClick={() => toggle(index)} className="cursor-pointer">
 							{item.show ? (
 								<FiMinus className="  border border-black p-3 text-[42px]    rounded-full" />
@@ -56,8 +56,8 @@ export default function FAQ() {
 							)}
 						</span>
 					</header>
-					<main className={`  ${item.show ? 'flex pt-2 w-10/12 text-gray-400' : 'hidden'} w-[80%]  `}>
-						<p className="text-[18px]">{item.content}</p>
+					<main className={`  ${item.show ? 'flex pt-2 w-10/12 text-gray-400' : 'hidden'} w-[100%] md:w-[80%] `}>
+						<p className="md:text-[18px]">{item.content}</p>
 					</main>
 				</div>
 			))}

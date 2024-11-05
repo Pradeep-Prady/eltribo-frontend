@@ -6,12 +6,12 @@ export default function HomeForm() {
 	return (
 		<section className='evenPadding myPadX'>
 			<main className="rounded-xl flex-1 bg-[#508D4E]">
-				<div className="rounded-xl flex  p-10 h-full">
+				<div className="rounded-xl flex flex-col md:flex-row p-3 md:p-10 h-full">
 					<li className='flex-1'>
 						<ImageC src={'social/ContactImg.svg'} styles={'h-full w-full'} />
 					</li>
 					<li className='flex-1 bg-white'>
-					<form className='FCol gap-3 p-[2rem] w-full'>
+					<form className='FCol gap-3 p-3 md:p-[2rem] w-full'>
 							<h1 className='text-[2.1rem] text-center font-pMedium'>Get in touch with us</h1>
 							<p className='text-[1rem] text-center text-[#79767D]'>Complete the form, and our team will reach out to you soon</p>
 							<input type="text" className='border-b-2 py-3 my-1 xl:my-3' placeholder='Name' />

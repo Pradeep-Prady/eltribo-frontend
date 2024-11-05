@@ -179,7 +179,7 @@
 //           </li> */}
 //           <li className="flex items-center gap-2">
 //             <CallNow />
-//             </li> 
+//             </li>
 //         </footer>
 //       </main>
 //     );
@@ -198,6 +198,7 @@ import { bkend } from "../../axios/axiosInstance";
 import { useDispatch } from "react-redux";
 import { ProductsSet } from "@/redux/slice/ProdsSlice";
 import { useRouter } from "next/navigation";
+import { FiMenu, FiX } from "react-icons/fi";
 
 export default function Header() {
   const data = [
@@ -214,6 +215,7 @@ export default function Header() {
   const [temp, setTemp] = useState(false);
   const dispatch = useDispatch();
   const router = useRouter();
+  const [isMenuOpen, setIsMenuOpen] = useState(false);
 
   const [objVal, setobjVal] = useState({
     main: {
@@ -298,6 +300,10 @@ export default function Header() {
     setActiveId(id);
   };
 
+  const toggleMenu = () => {
+    setIsMenuOpen(!isMenuOpen);
+  };
+
   if (temp) {
     return (
       <main className="">
@@ -319,11 +325,17 @@ export default function Header() {
             <ImageC src="social/fb.svg" styles={"h-[1.7rem] w-[1.7rem]"} />
           </li>
         </header>
+
         <footer className="py-2 px-3 flex justify-between">
           <Link href="/" className="font-pacifico text-greenB text-[2.5rem]">
             ElTribo
           </Link>
-          <li className="flex gap-[3.5rem] items-center text-[#1D1B20]">
+
+          <div className="flex md:hidden items-center justify-center">
+            <FiMenu onClick={toggleMenu} />
+          </div>
+
+          <li className="hidden md:flex gap-[3.5rem] items-center text-[#1D1B20]">
             {data?.map((item) =>
               item.id === 3 ? (
                 <div key={item.id}>
@@ -347,10 +359,42 @@ export default function Header() {
               )
             )}
           </li>
-          <li className="flex items-center gap-2">
+          <li className="hidden md:flex items-center gap-2">
             <CallNow />
           </li>
         </footer>
+
+        {isMenuOpen && (
+          <div className=" absolute bg-white z-[9999999999]  opacity-1 w-full flex flex-col">
+            <li className=" flex flex-col gap-3 items-center text-[#1D1B20]">
+              {data?.map((item) =>
+                item.id === 3 ? (
+                  <div key={item.id}>
+                    <DropDownC
+                      options={objVal}
+                      disp={disp}
+                      setDisp={setDisp}
+                      validate={"dontCheck"}
+                      items={items}
+                    />
+                  </div>
+                ) : (
+                  <Link href={item.path} key={item.id}>
+                    <div
+                      onClick={() => handleLinkClick(item.id)}
+                      className={`${activeId === item.id ? "font-bold" : ""}`}
+                    >
+                      {item.name}
+                    </div>
+                  </Link>
+                )
+              )}
+            </li>
+            <li className=" flex flex-col items-center gap-3">
+              <CallNow />
+            </li>
+          </div>
+        )}
       </main>
     );
   }
