@@ -6,8 +6,9 @@ import { useEffect, useState } from "react";
 import { useDispatch, useSelector } from "react-redux";
 import { ProductsSet } from "@/redux/slice/ProdsSlice";
 import { useParams } from "next/navigation";
-import Filters from "../components/products/Filters";
+ 
 import ProductItem from "@/components/products/ProductItem";
+import Filters from "@/components/products/Filters";
 
 export default function ProductMap(props) {
   const { product } = useSelector((store) => store.ProdsS);

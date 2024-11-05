@@ -375,7 +375,10 @@ export default function Header() {
             )}
           </li>
           <li className="hidden md:flex items-center gap-2">
-            <CallNow />
+          <a href="tel:+919698950229">
+  <CallNow />
+</a>
+
           </li>
         </footer>
 
@@ -409,7 +412,10 @@ export default function Header() {
               )}
             </li>
             <li className=" flex flex-col items-center my-5 gap-3">
-              <CallNow />
+            <a href="tel:+919698950229">
+  <CallNow />
+</a>
+
             </li>
 
 

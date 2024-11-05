@@ -3,11 +3,8 @@
 import { useSelector } from "react-redux";
 import ImageC from "../utils/ImageC";
 import ProductItem from "../products/ProductItem";
-import {
-  GreenTextButton,
-  GreenButton,
-} from "@/app/components/common/greenButton";
-
+import { GreenTextButton } from "@/app/components/common/greenButton";
+ 
 export default function ProdDisp({ heading, productData, img, text, Static }) {
   const { product } = useSelector((store) => store.ProdsS);
   const s = [
