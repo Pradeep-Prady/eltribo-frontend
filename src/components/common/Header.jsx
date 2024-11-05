@@ -351,7 +351,7 @@ export default function Header() {
                 <Link href={item.path} key={item.id}>
                   <div
                     onClick={() => handleLinkClick(item.id)}
-                    className={`${activeId === item.id ? "font-bold" : ""}`}
+                    className={`${activeId === item.id ? "font-bold text-greenB" : ""}`}
                   >
                     {item.name}
                   </div>
@@ -365,8 +365,11 @@ export default function Header() {
         </footer>
 
         {isMenuOpen && (
-          <div className=" absolute bg-white z-[9999999999]  opacity-1 w-full flex flex-col">
-            <li className=" flex flex-col gap-3 items-center text-[#1D1B20]">
+          <div className=" absolute bg-white p-5 z-[9999999999]  opacity-1 w-full flex  items-start justify-center ">
+            <div className="">
+
+
+            <li className=" flex flex-col gap-5 items-start text-[#1D1B20]">
               {data?.map((item) =>
                 item.id === 3 ? (
                   <div key={item.id}>
@@ -382,7 +385,7 @@ export default function Header() {
                   <Link href={item.path} key={item.id}>
                     <div
                       onClick={() => handleLinkClick(item.id)}
-                      className={`${activeId === item.id ? "font-bold" : ""}`}
+                      className={`${activeId === item.id ? "font-bold text-greenB" : ""}`}
                     >
                       {item.name}
                     </div>
@@ -390,9 +393,12 @@ export default function Header() {
                 )
               )}
             </li>
-            <li className=" flex flex-col items-center gap-3">
+            <li className=" flex flex-col items-center my-5 gap-3">
               <CallNow />
             </li>
+
+
+          </div>
           </div>
         )}
       </main>

@@ -21,7 +21,7 @@ export default function Footer() {
 	}];
 
 	return (
-		<footer className="w-full relative overflow-hidden">
+		<footer className="w-full relative overflow-hidden pt-3 md:pt-6 ">
 			<Image src={footerImage?.src} alt='logo' className='w-[500px] scale-[1.3] h-full absolute' width={100} height={100} />
 
 			<main className="evenPadding flex justify-evenly flex-wrap gap-y-3 max-lg:justify-center">

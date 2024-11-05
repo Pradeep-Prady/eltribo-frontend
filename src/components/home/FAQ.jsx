@@ -42,10 +42,10 @@ export default function FAQ() {
 	}
 
 	return (
-		<main className="FColC mb-5">
+		<main className="FColC my-7">
 			<h1 className="font-pMedium text-[2rem]">Eltribo FAQ</h1>
 			{values.map((item, index) => (
-				<div className="w-[90%] md:w-[80%] py-7 border-b-2" key={index}>
+				<div className="w-[90%] md:w-[80%] py-7 md:py-10 border-b-2" key={index}>
 					<header className={`flex items-center justify-between  ${values.length - 1 > index && !item.show ? 'border-b-' : ''}`}>
 						<h1 className="text-[18px] md:text-[1.5rem]  ">{item.name}</h1>
 						<span onClick={() => toggle(index)} className="cursor-pointer">

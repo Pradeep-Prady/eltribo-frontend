@@ -5,7 +5,7 @@ import ImageC from '../utils/ImageC';
 export default function HomeForm() {
 	return (
 		<section className='evenPadding myPadX'>
-			<main className="rounded-xl flex-1 bg-[#508D4E]">
+			<main className="rounded-xl   flex-1 bg-[#508D4E]">
 				<div className="rounded-xl flex flex-col md:flex-row p-3 md:p-10 h-full">
 					<li className='flex-1'>
 						<ImageC src={'social/ContactImg.svg'} styles={'h-full w-full'} />

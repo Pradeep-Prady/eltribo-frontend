@@ -32,14 +32,14 @@ export default function ProdDisp({ heading,productData, img, text, Static }) {
 			<h1 className="FColC gap-5 font-pMedium text-[2rem] mb-[1rem]">{heading}</h1>
 			<section className="flex justify-center">
 				{img ? 
-					<ImageC src={img} styles={'w-full h-[4rem] md:h-[15rem]'} />
+					<ImageC src={img} styles={'w-full h-[5rem] md:h-[15rem]'} />
 				:''}
 			</section>
 			
 				{
 					productData ? 
 
-					<div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 w-full  myPadX !px-0  justify-center gap-5 lg:gap-10">
+					<div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 w-full px-0 sm:px-10 md:px-20 lg:px-20 xl:px-32 2xl:px-10 justify-center gap-5 lg:gap-10">
 
 {					productData && productData?.map((i, j) => (
 						<ProductItem data={i} key={j} />
@@ -49,7 +49,7 @@ export default function ProdDisp({ heading,productData, img, text, Static }) {
 					</div>
 					:
 
-					<div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 my-[3.5rem] w-full myPadX  !px-0 justify-center gap-5 lg:gap-10">
+					<div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 my-[3.5rem] w-full   px-0 sm:px-10 md:px-20 lg:px-20 xl:px-32 2xl:px-10 justify-center gap-5 lg:gap-10">
 					
 					{					s?.map((i, j) => (
 						<ProductItem data={i} key={j} />
