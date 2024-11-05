@@ -1,16 +1,17 @@
 import Reviews from "@/components/aboutUs/Reviews";
 import Section1 from "@/components/aboutUs/Section1";
 import Support from "@/components/common/Support";
-import Footer from "../components/common/Footer";
+import Footer from "@/components/common/Footer";
+
 import ReduxndQueryWrapper from "../components/home/ReduxndQueryWrapper";
 import Header from "@/components/common/Header";
  
 export default function Page() {
   return (
     <>
-      {/* <ReduxndQueryWrapper>
+      <ReduxndQueryWrapper>
         <Header />
-      </ReduxndQueryWrapper> */}
+      </ReduxndQueryWrapper>
       <main className="">
         <Section1
           heading={"Story of El tribo"}
@@ -24,7 +25,7 @@ export default function Page() {
         />
         <Reviews />
       </main>
-	  {/* <Footer/> */}
+	  <Footer/>
     </>
   );
 }

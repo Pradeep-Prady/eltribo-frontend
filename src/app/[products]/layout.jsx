@@ -1,5 +1,6 @@
 import Header from "@/components/common/Header"
 import ReduxndQueryWrapper from "@/components/home/ReduxndQueryWrapper"
+import Footer from "@/components/common/Footer";
  
 export const metadata = {
   title: 'Next.js',
@@ -11,11 +12,11 @@ export default function RootLayout({ children }) {
     <>
       {/* <BreadCrumb /> */}
 
-      {/* <ReduxndQueryWrapper>
+      <ReduxndQueryWrapper>
         <Header />
-      </ReduxndQueryWrapper> */}
+      </ReduxndQueryWrapper>
       {children}
-      {/* <Footer/> */}
+      <Footer/>
 
     </>
   )

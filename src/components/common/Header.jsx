@@ -300,7 +300,6 @@ export default function Header() {
     setActiveId(id);
     if (isMenuOpen) toggleMenu(); // Close menu only if it is open
   };
-  
 
   const toggleMenu = () => {
     setIsMenuOpen(!isMenuOpen);
@@ -329,22 +328,25 @@ export default function Header() {
         </header>
 
         <footer className="py-2 px-3 flex justify-between">
-          <Link href="/" className="font-pacifico text-greenB text-[1.7rem] md:text-[2.5rem]">
+          <Link
+            href="/"
+            className="font-pacifico text-greenB text-[1.7rem] md:text-[2.5rem]"
+          >
             ElTribo
           </Link>
 
           <div className="flex md:hidden items-center justify-center">
-           
-           
-           {
-            isMenuOpen ?
-            <IoCloseOutline className="text-[24px] text-greenB" onClick={toggleMenu} />
-:
-<FiMenu className="text-[24px] text-greenB" onClick={toggleMenu} />
-
-           } 
-
-
+            {isMenuOpen ? (
+              <IoCloseOutline
+                className="text-[24px] text-greenB"
+                onClick={toggleMenu}
+              />
+            ) : (
+              <FiMenu
+                className="text-[24px] text-greenB"
+                onClick={toggleMenu}
+              />
+            )}
           </div>
 
           <li className="hidden md:flex gap-[3.5rem] items-center text-[#1D1B20]">
@@ -362,11 +364,10 @@ export default function Header() {
               ) : (
                 <Link href={item.path} key={item.id}>
                   <div
-                    onClick={() => 
-                      handleLinkClick(item.id)
-                       
-                    }
-                    className={`${activeId === item.id ? "font-bold text-greenB" : ""}`}
+                    onClick={() => handleLinkClick(item.id)}
+                    className={`${
+                      activeId === item.id ? "font-bold text-greenB" : ""
+                    }`}
                   >
                     {item.name}
                   </div>
@@ -375,51 +376,47 @@ export default function Header() {
             )}
           </li>
           <li className="hidden md:flex items-center gap-2">
-          <a href="tel:+919698950229">
-  <CallNow />
-</a>
-
+            <a href="tel:+919698950229">
+              <CallNow />
+            </a>
           </li>
         </footer>
 
         {isMenuOpen && (
           <div className=" absolute bg-white p-5 z-[9999999999]  opacity-1 w-full flex  items-start justify-center ">
             <div className="">
-
-
-            <li className=" flex flex-col gap-5 items-start text-[#1D1B20]">
-              {data?.map((item) =>
-                item.id === 3 ? (
-                  <div key={item.id}>
-                    <DropDownC
-                      options={objVal}
-                      disp={disp}
-                      setDisp={setDisp}
-                      validate={"dontCheck"}
-                      items={items}
-                    />
-                  </div>
-                ) : (
-                  <Link href={item.path} key={item.id}>
-                    <div
-                      onClick={() => handleLinkClick(item.id)}
-                      className={`${activeId === item.id ? "font-bold text-greenB" : ""}`}
-                    >
-                      {item.name}
+              <li className=" flex flex-col gap-5 items-start text-[#1D1B20]">
+                {data?.map((item) =>
+                  item.id === 3 ? (
+                    <div key={item.id}>
+                      <DropDownC
+                        options={objVal}
+                        disp={disp}
+                        setDisp={setDisp}
+                        validate={"dontCheck"}
+                        items={items}
+                      />
                     </div>
-                  </Link>
-                )
-              )}
-            </li>
-            <li className=" flex flex-col items-center my-5 gap-3">
-            <a href="tel:+919698950229">
-  <CallNow />
-</a>
-
-            </li>
-
-
-          </div>
+                  ) : (
+                    <Link href={item.path} key={item.id}>
+                      <div
+                        onClick={() => handleLinkClick(item.id)}
+                        className={`${
+                          activeId === item.id ? "font-bold text-greenB" : ""
+                        }`}
+                      >
+                        {item.name}
+                      </div>
+                    </Link>
+                  )
+                )}
+              </li>
+              <li className=" flex flex-col items-center my-5 gap-3">
+                <a href="tel:+919698950229">
+                  <CallNow />
+                </a>
+              </li>
+            </div>
           </div>
         )}
       </main>

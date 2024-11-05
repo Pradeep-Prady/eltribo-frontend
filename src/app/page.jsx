@@ -31,9 +31,9 @@ export default async function Home() {
     return (
       <>
         <div className="bg-[#F1FFF9]">
-          {/* <ReduxndQueryWrapper>
+          <ReduxndQueryWrapper>
             <Header />
-          </ReduxndQueryWrapper> */}
+          </ReduxndQueryWrapper>
           <Section1 />
           <Support />
           <About />
@@ -44,6 +44,7 @@ export default async function Home() {
           <Reviews />
           <FAQ />
           <HomeForm />
+          <Footer />
         </div>
       </>
     );

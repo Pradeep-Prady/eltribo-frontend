@@ -1,6 +1,7 @@
-import Footer from "@/app/components/common/Footer";
+ 
 import Header from "@/components/common/Header";
 import ReduxndQueryWrapper from "@/components/home/ReduxndQueryWrapper";
+import Footer from "@/components/common/Footer";
 
 export const metadata = {
   title: "Next.js",

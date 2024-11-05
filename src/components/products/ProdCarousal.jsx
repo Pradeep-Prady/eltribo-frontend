@@ -38,7 +38,7 @@ export default function ProdCarousal() {
   if (first) {
     return (
       <main className="flex md:w-[35rem]  overflow-hidden justify-evenly flex-wrap max-lg:FCol max-lg:gap-4">
-        <section className="flex gap-3 w-full overflow-x-scroll h-[10rem]  hideScroll max-sm:order-2 sm:flex sm:flex-col sm:h-[25rem]">
+        <section className="flex gap-3 w-full md:w-auto overflow-x-scroll h-[10rem]  hideScroll max-sm:order-2 sm:flex sm:flex-col sm:h-[25rem]">
           {first.img.map((i, j) => (
             <ImageC
               key={j}

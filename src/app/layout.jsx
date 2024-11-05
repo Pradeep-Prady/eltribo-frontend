@@ -13,12 +13,12 @@ export default function RootLayout({ children }) {
         <Head />
       </head>
       <body>
-      <ReduxndQueryWrapper>
+      {/* <ReduxndQueryWrapper>
         <Header />
-      </ReduxndQueryWrapper>
+      </ReduxndQueryWrapper> */}
         {children}
 
-        <Footer />
+        {/* <Footer /> */}
 
       </body>
     </html>
