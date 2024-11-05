@@ -327,7 +327,7 @@ export default function Header() {
         </header>
 
         <footer className="py-2 px-3 flex justify-between">
-          <Link href="/" className="font-pacifico text-greenB text-[2.5rem]">
+          <Link href="/" className="font-pacifico text-greenB text-[1.8rem] md:text-[2.5rem]">
             ElTribo
           </Link>
 

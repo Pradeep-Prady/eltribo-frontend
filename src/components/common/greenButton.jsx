@@ -2,7 +2,7 @@ import { IoIosArrowForward } from "react-icons/io";
 
 export default function GreenButton(props) {
 	return (
-		<button className={`text-white bg-greenB flex gap-3 w-fit font-pRegular items-center rounded-full py-[0.8rem] px-[1.5rem] ${props.fontL ? 'text-[1.1rem]' : 'text-[0.85rem]'}`} onClick={props.click}>{props.text}
+		<button className={`text-white bg-greenB flex gap-3 w-fit font-pRegular items-center rounded-full py-[0.8rem] px-[1rem] md:px-[1.5rem] ${props.fontL ? 'text-[1.1rem]' : 'text-[0.85rem]'}`} onClick={props.click}>{props.text}
 			<IoIosArrowForward size={20} />
 		</button>
 	)
@@ -17,7 +17,7 @@ export function GreenButtonSend(props) {
 
 export function GreenBorder(props) {
 	return (
-		<button className={"py-[0.8rem] px-[1.5rem] border-[0.88px] rounded-full w-fit border-[#1A5319] font-pRegular text-greenB text-[0.85rem]"}>{props.text}</button>
+		<button className={" md:py-[0.8rem] px-[1rem] md:px-[1.5rem]  border-[0.88px] rounded-full w-fit border-[#1A5319] font-pRegular text-greenB text-[0.85rem]"}>{props.text}</button>
 	)
 }
 

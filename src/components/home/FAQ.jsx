@@ -47,12 +47,12 @@ export default function FAQ() {
 			{values.map((item, index) => (
 				<div className="w-[90%] md:w-[80%] py-7 md:py-10 border-b-2" key={index}>
 					<header className={`flex items-center justify-between  ${values.length - 1 > index && !item.show ? 'border-b-' : ''}`}>
-						<h1 className="text-[18px] md:text-[1.5rem]  ">{item.name}</h1>
+						<h1 className="text-[18px] md:text-[1.5rem] w-[85%] md:w-full ">{item.name}</h1>
 						<span onClick={() => toggle(index)} className="cursor-pointer">
 							{item.show ? (
-								<FiMinus className="  border border-black p-3 text-[42px]    rounded-full" />
+								<FiMinus className="  border border-black p-2 md:p-3 text-[28px] md:text-[42px]    rounded-full" />
 							) : (
-								<FiPlus className="text-[42px] p-3 bg-black text-white rounded-full" />
+								<FiPlus className="md:text-[42px] p-2 md:p-3 text-[28px] bg-black text-white rounded-full" />
 							)}
 						</span>
 					</header>

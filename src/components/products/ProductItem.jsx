@@ -27,7 +27,7 @@ export default function ProductItem({ data }) {
       {data?.cost ? (
         <>
           <h3 className="text-[#322F35] py-3 text-[1.2rem]">Rs.{data?.cost}</h3>
-          <div className="flex justify-between gap-2">
+          <div className="flex justify-between gap-1 md:gap-2">
             <Link
               href={`/products/${data?.name}`}
               onClick={() => dispatch(prodSet(data))}
