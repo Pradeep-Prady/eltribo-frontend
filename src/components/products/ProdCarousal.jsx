@@ -38,7 +38,7 @@ export default function ProdCarousal() {
   if (first) {
     return (
       <main className="flex md:w-[35rem]  overflow-hidden justify-evenly flex-wrap max-lg:FCol max-lg:gap-4">
-        <section className="flex gap-3 w-full md:w-auto overflow-x-scroll h-[10rem]  hideScroll max-sm:order-2 sm:flex sm:flex-col sm:h-[25rem]">
+        <section className="flex gap-3 w-[95%] md:w-auto overflow-x-scroll h-[10rem]  hideScroll max-sm:order-2 sm:flex sm:flex-col sm:h-[25rem]">
           {first.img.map((i, j) => (
             <ImageC
               key={j}
@@ -48,7 +48,7 @@ export default function ProdCarousal() {
             />
           ))}
         </section>
-        <section className="w-[23rem] h-[25.1rem] rounded-xl border-[1px] border-black max-sm:order-1 z-0">
+        <section className="w-[95%] md:w-[23rem] h-[25.1rem] rounded-xl border-[1px] border-black max-sm:order-1 z-0">
           <Carousel responsive={responsive} ref={carousal}>
             {first.img.map((i, j) => (
               <ImageC key={j} src={i} styles="h-[25rem] rounded-xl" />

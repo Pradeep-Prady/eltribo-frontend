@@ -105,11 +105,11 @@ export default function InquireForm({ disp, toggleInq, quantity, setThankyou }) 
 		return (
 			<main className={`${disp ? 'block' : 'hidden'} font-pRegular z-10`}>
 				<aside className={`fixed bg-black opacity-50 FullCover`} onClick={toggleInq}></aside>
-				<section className="absoluteC w-[40%] rounded-xl bg-white">
-					<div className="flex justify-end pt-3 pr-3">
+				<section className="absoluteC w-full md:w-[40%] rounded-xl bg-white">
+					<div className="flex justify-end md:pt-3 md:pr-3">
 						<ImageC src='lines/add.svg' onclick = {toggleInq} styles={'h-[3.5rem] w-[3.5rem] hvrPointer'} />
 					</div>
-					<form className='FCol gap-5 px-[5rem] pb-[3rem]' onSubmit={handleSubmit(FormData)}>
+					<form className='FCol w-full gap-5 px-5 md:px-[5rem] pb-[3rem]' onSubmit={handleSubmit(FormData)}>
 						<h1 className='text-[1.5rem]'>{prod.name}</h1>
 						<input type="text" placeholder='Name' className='InpEnq' {...register('name')}
 						/>

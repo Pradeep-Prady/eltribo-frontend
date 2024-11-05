@@ -86,7 +86,7 @@ input::-webkit-inner-spin-button {
 }
 
 .inpContact {
-  @apply border-[1px] rounded-2xl p-3 border-greenB w-[22rem];
+  @apply border-[1px] rounded-2xl text-[#322f35] p-3 border-greenB w-[22rem];
 }
 
 

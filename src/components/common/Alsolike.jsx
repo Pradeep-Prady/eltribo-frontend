@@ -9,7 +9,7 @@ export default function Alsolike() {
 	return (
 		<main className="evenPadding ">
 			<h1 className="text-center font-pMedium text-[1.7rem]  mb-[2rem]">You May Also Like</h1>
-			<section className=" grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 myPadX gap-[1rem] !pb-7 justify-center items-start flex-wrap gap-y-[2rem]">
+			<section className=" grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 px-0 sm:px-10 md:px-20 lg:px-20 xl:px-32  gap-[1rem] !pb-7 justify-center items-start flex-wrap gap-y-[2rem]">
 				{product.slice(0, 3).map((i, j) => (
 					<ProductItem key={j} data={i}  />
 				))}
