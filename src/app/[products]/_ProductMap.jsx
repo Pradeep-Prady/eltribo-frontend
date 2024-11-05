@@ -1,61 +1,61 @@
-'use client';
+"use client";
 
-
-
-import { useEffect, useState } from 'react';
+import { useEffect, useState } from "react";
 // import Filters from '../../../components/products/Filters';
 // import ProductItem from '../../../components/products/ProductItem';
-import { useDispatch, useSelector } from 'react-redux';
-import { ProductsSet } from '@/redux/slice/ProdsSlice';
-import { useParams } from 'next/navigation';
-import Filters from '../components/products/Filters';
-import ProductItem from '@/components/products/ProductItem';
+import { useDispatch, useSelector } from "react-redux";
+import { ProductsSet } from "@/redux/slice/ProdsSlice";
+import { useParams } from "next/navigation";
+import Filters from "../components/products/Filters";
+import ProductItem from "@/components/products/ProductItem";
 
 export default function ProductMap(props) {
+  const { product } = useSelector((store) => store.ProdsS);
+  const [url, setUrl] = useState();
 
-	const { product } = useSelector((store) => store.ProdsS);
-	const [url, setUrl] = useState();
+  const params = useParams();
 
-	const params = useParams();
+  useEffect(() => {
+    setUrl(params.products.replace(/%20/g, " "));
+  }, [params]);
 
-	useEffect(() => {
-		setUrl(params.products.replace(/%20/g, ' '));
-	}, [params])
+  useEffect(() => {
+    // console.log('😇', url.replace(/%20/g, ' '));
+    console.log("👩", url);
+  }, [url]);
 
-	useEffect(() => {
-		// console.log('😇', url.replace(/%20/g, ' '));
-		console.log('👩', url);
-	}, [url])
+  useEffect(() => {
+    // setUrl(window.location.href.split('/'));
+  }, []);
 
+  const dispatch = useDispatch();
 
-	useEffect(() => {
+  const [prod, setProd] = useState();
 
-		// setUrl(window.location.href.split('/'));
-	}, [])
-	
-	const dispatch = useDispatch();
-	
-	const [prod, setProd] = useState(); 
-	
-	// useEffect(() => {
-	// 	dispatch(ProductsSet(props.prod.data));
-	// }, [1]);
-	 
-	useEffect(() => {
-		setProd(product);
-		console.log("🚀 ~ ProductMap ~ product:", product);
-	}, [product]);
+  // useEffect(() => {
+  // 	dispatch(ProductsSet(props.prod.data));
+  // }, [1]);
 
-	if (prod && url) {
-		return (
-			<>
-			<Filters text = {url} />
-			<section className = 'flex flex-wrap gap-y-[2rem] justify-evenly'>
+  useEffect(() => {
+    setProd(product);
+    console.log("🚀 ~ ProductMap ~ product:", product);
+  }, [product]);
+
+  if (prod && url) {
+    return (
+      <>
+        <Filters text={url} />
+        {/* <section className = 'flex flex-wrap gap-y-[2rem] justify-evenly'>
 				{prod?.map((i, j) => (
 					<ProductItem key = {j} data = {i} />
 				))}
-			</section>
-			</>
-		)
-	}
+			</section> */}
+        <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 my-[3.5rem] w-full   px-0 sm:px-10 md:px-20 lg:px-20 xl:px-32 2xl:px-10 justify-center gap-5 lg:gap-10">
+          {prod?.map((i, j) => (
+            <ProductItem key={j} data={i} />
+          ))}
+        </div>
+      </>
+    );
+  }
 }

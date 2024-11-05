@@ -39,7 +39,7 @@ export default function ProdCarousal() {
 	if (first) {
 		return (
 		<main className='flex w-[35rem] justify-evenly flex-wrap max-lg:FCol max-lg:gap-4'>
-			<section className="flex gap-3 h-[10rem] overflow-auto max-sm:order-2 sm:flex sm:flex-col sm:h-[25rem]">
+			<section className="flex gap-3 h-[10rem] overflow-auto hideScroll max-sm:order-2 sm:flex sm:flex-col sm:h-[25rem]">
 				{first.img.map((i, j) => (
 					<ImageC key={j} src={i} styles='h-[150px] w-[150px] rounded-xl shrink-0' onclick={() => carousal.current?.goToSlide(j, true)} />
 				))}

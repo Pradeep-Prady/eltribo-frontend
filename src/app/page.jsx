@@ -8,6 +8,7 @@ import Footer from "@/components/common/Footer";
 import FAQ from "@/components/home/FAQ";
 import ReduxndQueryWrapper from "@/components/home/ReduxndQueryWrapper";
 import { bkend } from "@/axios/axiosInstance";
+import Reviews from "@/components/aboutUs/Reviews";
 
 export default async function Home() {
   // const response = await bkend.get('/getproduct');
@@ -39,6 +40,8 @@ export default async function Home() {
           <ReduxndQueryWrapper>
             <ProdDispC data={response.data.data} />
           </ReduxndQueryWrapper>
+
+          <Reviews />
           <FAQ />
           <HomeForm />
         </div>
