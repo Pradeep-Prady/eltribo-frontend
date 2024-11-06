@@ -44,8 +44,8 @@ export default async function Home() {
           <Reviews />
           <FAQ />
           <HomeForm />
-          <Footer />
         </div>
+        <Footer />
       </>
     );
   }
