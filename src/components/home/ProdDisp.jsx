@@ -3,7 +3,7 @@
 import { useSelector } from "react-redux";
 import ImageC from "../utils/ImageC";
 import ProductItem from "../products/ProductItem";
-import { GreenTextButton } from "@/app/components/common/greenButton";
+import { GreenTextButton } from '@/app/components/common/greenButton';
  
 export default function ProdDisp({ heading, productData, img, text, Static }) {
   const { product } = useSelector((store) => store.ProdsS);
@@ -37,7 +37,7 @@ export default function ProdDisp({ heading, productData, img, text, Static }) {
         </h1>
         <section className="flex justify-center">
           {img ? (
-            <ImageC src={img} styles={"w-full h-[6rem] md:h-[15rem]"} />
+            <ImageC src={img} styles={"w-full h-[6rem] md:h-[6rem] md:h-[15rem]"} />
           ) : (
             ""
           )}

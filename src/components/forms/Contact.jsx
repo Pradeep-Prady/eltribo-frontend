@@ -4,7 +4,7 @@ import { ContactEnqSchema } from "@/utils/schema/ContactS";
 import { zodResolver } from "@hookform/resolvers/zod";
 import { useForm } from "react-hook-form";
 import GreenButton from "../common/greenButton";
-import { bkend } from "../../axios/axiosInstance";
+import { bkend } from "@/axios/axiosInstance";
 
 export default function ContactForm() {
   const {
@@ -16,11 +16,10 @@ export default function ContactForm() {
   } = useForm({
     resolver: zodResolver(ContactEnqSchema),
     defaultValues: {
-      name: "Person1",
-      mail: "person1@gmai.com",
-      phno: 1234567890,
-      message:
-        "Apple Inc. is an American multinational corporation and technology company headquartered and incorporated in Cupertino, California, in Silicon Valley. It is best known for its consumer electronics, software, and services. Founded in 1976, the company was incorporated as Apple Computer, Inc. by Steve Wozniak and Steve Jobs the following year. It was renamed Apple Inc. in 2007 as the company had expanded its focus from computers to consumer electronics. Apple is the largest technology company by revenue, with US$383.29 billion in 2023.",
+      name: "",
+      mail: "",
+      phno: null,
+      message: "",
     },
   });
 

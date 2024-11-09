@@ -35,7 +35,7 @@ export default function BreadCrumb() {
 
 	if (crumbs && link) {
 		return (
-			<section className="relative">
+			<section className="relative w-full">
 				<ImageC src='lines/BreadCrumbC.svg' styles={'w-[100%] h-[10rem]'} />
 				<main className="absolute FullCover FColC gap-3">
 					<h1 className='text-[2.1rem] font-pMedium'>Products</h1>

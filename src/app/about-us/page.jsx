@@ -5,16 +5,19 @@ import Footer from "@/components/common/Footer";
 
 import ReduxndQueryWrapper from "../components/home/ReduxndQueryWrapper";
 import Header from "@/components/common/Header";
+import BreadCrumb from "@/components/common/BreadCrumb";
  
-export default function Page() {
+export default function Page({ params }) {
+  console.log(params, "params")
   return (
     <>
       <ReduxndQueryWrapper>
         <Header />
       </ReduxndQueryWrapper>
+      <BreadCrumb />
       <main className="">
         <Section1
-          heading={"Story of El tribo"}
+          heading={"Story of Eltribo"}
           main={`Anaikatty Rural Community College is an initiative to impart skill education to Tribal and Rural people from the beauty hills of Anaikatty in the outskirts of the Coimbatore City. The villagers of Anaikatty have been given skill training and are producing products that are sold locally and all over India. n the heart of the Anaikatty hills, nestled near Coimbatore, lies a rural community rich with culture, tradition, and untapped potential. Though the beauty of the rolling hills and the serenity of their landscape often draw visitors, the people of this community face daily struggles. For generations, the villagers have depended on subsistence agriculture, small-scale livestock farming, and forest resources. However, with changing times and economic pressures, they began yearning for something more—an opportunity to thrive, not just survive.`}
         />
         <Support />

@@ -1,20 +1,19 @@
-import axios from 'axios';
+import axios from "axios";
 
-const localUrl = "http://localhost:3000/api/";
-const prodUrl = 'https://eltribo-server.vercel.app/api/'
+const localUrl = "http://localhost:5000/api/";
+const prodUrl = "https://eltribo-server.vercel.app/api/";
 
 export const bkend = axios.create({
-  
-  baseURL:prodUrl , 
+  baseURL: localUrl,
   headers: {
-    'Content-Type': 'application/json',
+    "Content-Type": "application/json",
   },
 });
 
 export const db = axios.create({
-  baseURL: prodUrl, 
+  baseURL: localUrl,
   headers: {
-    'Content-Type': 'application/json',
+    "Content-Type": "application/json",
   },
 });
 

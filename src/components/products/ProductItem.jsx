@@ -11,7 +11,7 @@ export default function ProductItem({ data }) {
     data?.img[0]?.src?.startsWith("data:", 0) && `${data?.img[0]?.src}`
   );
   return (
-    <section className={`FCol justify-between  h-auto   mx-3 font-pRegular`}>
+    <section className={`FCol justify-between  h-auto w-11/12 md:w-full  mx-3 font-pRegular`}>
       <ImageC
         src={`${data?.img ? data?.img[0] : ""}`}
         styles="w-full h-[24rem] rounded-[20px] overflow-hidden "
