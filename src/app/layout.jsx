@@ -4,7 +4,6 @@ import '../styles/globals.css';
 import Header from '@/components/common/Header';
 import Footer from '@/components/common/Footer';
 import ReduxndQueryWrapper from '@/components/home/ReduxndQueryWrapper';
-
 export default function RootLayout({ children }) {
 
   return (
@@ -19,6 +18,9 @@ export default function RootLayout({ children }) {
         {children}
 
         {/* <Footer /> */}
+
+        
+
 
       </body>
     </html>

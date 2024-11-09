@@ -318,12 +318,19 @@ export default function Header() {
             </div>
           </li>
           <li className="flex gap-3 items-center">
-            <ImageC
+            {/* <ImageC
               src="social/whatsApp.svg"
               styles={"h-[1.7rem] w-[1.7rem]"}
-            />
+            /> */}
+            <a target='_blank'  href="https://www.instagram.com/eltriboventures/?hl=en">
+
             <ImageC src="social/insta.svg" styles={"h-[1.7rem] w-[1.7rem]"} />
+            </a>
+
+            <a target='_blank'  href="https://www.facebook.com/profile.php?id=61567058990559">
+            
             <ImageC src="social/fb.svg" styles={"h-[1.7rem] w-[1.7rem]"} />
+            </a>
           </li>
         </header>
 

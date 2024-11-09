@@ -7,17 +7,17 @@ export default function Footer() {
 
 	const values = [{
 		name: 'SHOP',
-		values: [{name: 'Biscuit tea cups', link: ''}, {name: 'Paper bags', link: ''}, {name: 'Napkins', link: ''}]
+		values: [{name: 'Biscuit tea cups', link: '/Biscuit%20Tea%20Cups'}, {name: 'Paper bags', link: 'Paper%20Bags'}, {name: 'Napkins', link: '/Napkins'}]
 	}, {
 		name: 'INFORMATION',
 		values: [{name: 'Our Story', link: '/about-us'}, {name: 'Returns and Refunds', link: ''}, {name: 'Terms Of Service', link: ''}, {name: 'Privacy Policy', link: ''}, {name: 'About', link: '/about-us'}, {name: 'FAQ', link: '/about-us'}]
 	}, {
 		name: 'CUSTOMER SERVICE',
-		values: [{name: 'Contact Us', link: '/contact-us'}, {name: 'My Account', link: ''}, {name: 'Happy Customers', link: '/about-us'}]
+		values: [{name: 'Contact Us', link: '/contact-us'},   {name: 'Happy Customers', link: '/about-us'}]
 	}, {
 		name: 'FOLLOW US',
 		values: [{name: '+91 8148861438', link:'tel:+91 8148861438'}, {name: 'support@eltribo-ventures', link:'mailto:support@eltribo-ventures'}],
-		icons: ['fb.svg', 'insta.svg', 'twitter.svg', 'whatsApp.svg', 'youTube.svg']
+		icons: [ {img: 'fb.svg', link: 'https://www.facebook.com/profile.php?id=61567058990559'},{img: 'insta.svg', link: 'https://www.instagram.com/eltriboventures/?hl=en'},{img: 'twitter.svg', link: 'https://www.facebook.com/profile.php?id=61567058990559'},{img: 'whatsApp.svg', link: 'https://www.facebook.com/profile.php?id=61567058990559'},{img: 'youTube.svg', link: 'https://www.facebook.com/profile.php?id=61567058990559'}   ]
 	}];
 
 	return (
@@ -39,7 +39,10 @@ export default function Footer() {
 							{i.name === 'FOLLOW US' ? <>
 								<aside className='flex gap-2'>
 									{i.icons.map((i, j) => (
-										<ImageC src={`/social/${i}`} styles='h-[33px] w-[33px]' />
+										<a href={i?.link} target='_blank'>
+										<ImageC src={`/social/${i?.img}`} styles='h-[33px] w-[33px]' />
+
+										</a>
 									))}
 								</aside>
 							</> : ''}
