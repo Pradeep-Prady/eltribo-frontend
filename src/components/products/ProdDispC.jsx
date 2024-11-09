@@ -67,7 +67,7 @@ export default function ProdDispC({ data }) {
       <>
         <ProdDisp
      
-          heading={"Our Product"}
+          heading={"Our Products"}
           text={"Explore Our Products"}
           Static={true}
         />

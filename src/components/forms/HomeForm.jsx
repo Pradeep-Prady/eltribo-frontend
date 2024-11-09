@@ -5,12 +5,12 @@ import ImageC from '../utils/ImageC';
 export default function HomeForm() {
 	return (
 		<section className='evenPadding myPadX'>
-			<main className="rounded-xl   flex-1 bg-[#508D4E]">
-				<div className="rounded-xl flex flex-col md:flex-row p-3 md:p-10 h-full">
+			<main className="rounded-xl   flex-1 bg-[#508D4E] p-2 md:p-10">
+				<div className="rounded-xl bg-white flex flex-col md:flex-row p-3 md:p-10 h-full">
 					<li className='flex-1'>
 						<ImageC src={'social/ContactImg.svg'} styles={'h-full w-full'} />
 					</li>
-					<li className='flex-1 bg-white'>
+					<li className='flex-1 '>
 					<form className='FCol gap-3 p-3 md:p-[2rem] w-full'>
 							<h1 className='text-[28px] md:text-[2.1rem] text-center font-pMedium'>Get in touch with us</h1>
 							<p className='text-[1rem] text-center text-[#79767D]'>Complete the form, and our team will reach out to you soon</p>
