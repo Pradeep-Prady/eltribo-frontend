@@ -14,7 +14,7 @@ export default function Page({ params }) {
       <ReduxndQueryWrapper>
         <Header />
       </ReduxndQueryWrapper>
-      <BreadCrumb />
+      {/* <BreadCrumb /> */}
       <main className="">
         <Section1
           heading={"Story of Eltribo"}
