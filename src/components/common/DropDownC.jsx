@@ -5,11 +5,15 @@ import { IoIosArrowDown } from 'react-icons/io';
 
 export default function DropDownC({validate, options: {main, heading, body}, setValue, items, headingText, setHeadingText, disp, setDisp }) {
 
+	console.log('inside', items)
+
 	useEffect(() => {
-		if (items) {
+		if (items.current.children) {
+			console.log('inside use effect if')
 			Object.entries(items.current.children).map((i) => i.slice(1, 2).map((k) => {
 				k.onclick = () => {
 					setDisp(false);
+					console.log('inside clicked')
 					console.log('👸', 'clicked');
 						if (validate === 'dontCheck') {
 							console.log('👨‍👧‍👧', 'in if');
@@ -23,21 +27,28 @@ export default function DropDownC({validate, options: {main, heading, body}, set
 				})
 			);
 		}
+		console.log(items.current.children, 'itemsitemsitems')
 	}, []);
 
 	if (heading && body) {
 		return (
-			<main className={`${main.tw}   select-none `}>
-				<div className={`  flex items-center gap-2`} onClick={() => setDisp(true)}>
+			<main className={`${main.tw}  select-none `}>
+				<div className={` ${heading.tw} flex items-center gap-2`} onClick={() => setDisp(()=> !disp)}>
 					{headingText ? headingText : heading.text}
 					<IoIosArrowDown className={`${disp ? '-rotate-180' : ''}`} />
 				</div>
 				<ul className={` !w-[170px] ${disp ? 'block ' : 'hidden'} z-30 ${body.tw}`} ref={items}>
 					{Object.entries(body.items).map((i, j) => (
+
+
+						validate === 'dontCheck' ? 
+
 						<li  key={j} onClick={() => {
 							i[1]?.data ? i[1].click(i[1].data) : ''
 							setDisp(false);
-						}} className={body.itemstw}>{i[1].text}</li>
+						}} className={body.itemstw}>{i[1].text}</li> : 
+
+						<li key={j} className={body.itemstw}>{i[1].text}</li>
 					))}
 				</ul>
 			</main>

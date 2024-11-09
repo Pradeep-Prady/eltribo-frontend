@@ -27,7 +27,7 @@ export default function ProdDisp({ heading, productData, img, text, Static }) {
     },
   ];
 
-  const data = Static ? s : product;
+  const data = Static ? s : product;``
 
   if (data) {
     return (
@@ -37,7 +37,7 @@ export default function ProdDisp({ heading, productData, img, text, Static }) {
         </h1>
         <section className="flex justify-center">
           {img ? (
-            <ImageC src={img} styles={"w-full h-[6rem] md:h-[6rem] md:h-[15rem]"} />
+            <ImageC src={img} styles={"w-full h-[6rem]   md:h-[15rem]"} />
           ) : (
             ""
           )}

@@ -6,9 +6,9 @@ import Footer from "@/components/common/Footer";
 import ReduxndQueryWrapper from "../components/home/ReduxndQueryWrapper";
 import Header from "@/components/common/Header";
 import BreadCrumb from "@/components/common/BreadCrumb";
- 
+
 export default function Page({ params }) {
-  console.log(params, "params")
+  console.log(params, "params");
   return (
     <>
       <ReduxndQueryWrapper>
@@ -28,7 +28,7 @@ export default function Page({ params }) {
         />
         <Reviews />
       </main>
-	  <Footer/>
+      <Footer />
     </>
   );
 }

@@ -11,7 +11,7 @@ export default function HomeForm() {
 						<ImageC src={'social/ContactImg.svg'} styles={'h-full w-full'} />
 					</li>
 					<li className='flex-1 '>
-					<form className='FCol gap-3 p-3 md:p-[2rem] w-full'>
+					<form className='FCol gap-3 p-3 md:p-[2rem] w-full' >
 							<h1 className='text-[28px] md:text-[2.1rem] text-center font-pMedium'>Get in touch with us</h1>
 							<p className='text-[1rem] text-center text-[#79767D]'>Complete the form, and our team will reach out to you soon</p>
 							<input type="text" className='border-b-2 py-3 my-1 xl:my-3' placeholder='Name' />

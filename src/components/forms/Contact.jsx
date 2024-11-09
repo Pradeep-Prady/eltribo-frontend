@@ -24,14 +24,15 @@ export default function ContactForm() {
   });
 
   async function SendConEnq(data) {
+    console.log(data);
     const f = await bkend.post("/contact", data);
-    console.log("🚀 ~ SendConEnq ~ f:", f);
+    console.log("🚀 ~ SendConEnq ~ f:", f.data);
   }
 
   function Submit(formD) {
     delete formD.save;
     console.log("🚀 ~ Submit ~ formD:", formD);
-    SendConEnq();
+    SendConEnq(formD);
   }
 
   return (
