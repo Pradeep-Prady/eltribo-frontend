@@ -6,10 +6,10 @@ import { useDispatch } from "react-redux";
 import Image from "next/image";
 export default function ProductItem({ data }) {
   const dispatch = useDispatch();
-  console.log(data?.img);
-  console.log(
-    data?.img[0]?.src?.startsWith("data:", 0) && `${data?.img[0]?.src}`
-  );
+  // console.log(data?.img);
+  // console.log(
+  //   data?.img[0]?.src?.startsWith("data:", 0) && `${data?.img[0]?.src}`
+  // );
   return (
     <section className={`FCol justify-between  h-auto w-11/12 md:w-full  mx-3 font-pRegular`}>
       <ImageC

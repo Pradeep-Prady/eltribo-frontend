@@ -1,0 +1,20 @@
+<svg width="1432" height="184" viewBox="0 0 1432 184" fill="none" xmlns="http://www.w3.org/2000/svg">
+<g clip-path="url(#clip0_859_3992)">
+<rect width="1440" height="184" transform="translate(-8)" fill="#EDE4FF"/>
+<rect width="200" height="184" transform="matrix(-1 0 0 1 1464 0)" fill="#25BDB2"/>
+<path d="M1264 184C1264 159.837 1269.17 135.91 1279.22 113.586C1289.28 91.2623 1304.01 70.9783 1322.58 53.8923C1341.15 36.8064 1363.2 23.253 1387.46 14.0062C1411.73 4.7593 1437.74 -1.05621e-06 1464 0L1464 184L1264 184Z" fill="#49499D"/>
+<rect x="1265" y="184" width="200" height="184" transform="rotate(-180 1265 184)" fill="#25BDB2"/>
+<rect x="1265" y="86" width="200" height="86" transform="rotate(-180 1265 86)" fill="#11012E"/>
+<path d="M1165 173.881C1109.77 173.881 1065 132.691 1065 81.8809L1265 81.8809C1265 132.691 1220.23 173.881 1165 173.881Z" fill="#11012E"/>
+<rect width="200" height="184" transform="matrix(1 0 0 -1 -8 184)" fill="#25BDB2"/>
+<path d="M192 0C192 24.1632 186.827 48.0898 176.776 70.4137C166.725 92.7377 151.993 113.022 133.421 130.108C114.85 147.194 92.8018 160.747 68.5367 169.994C44.2716 179.241 18.2644 184 -8 184L-7.99998 0H192Z" fill="#49499D"/>
+<rect x="191" width="200" height="184" fill="#25BDB2"/>
+<rect x="191" y="98" width="200" height="86" fill="#11012E"/>
+<path d="M291 10.1191C346.228 10.1191 391 51.3089 391 102.119L191 102.119C191 51.3089 235.772 10.1191 291 10.1191Z" fill="#11012E"/>
+</g>
+<defs>
+<clipPath id="clip0_859_3992">
+<rect width="1440" height="184" fill="white" transform="translate(-8)"/>
+</clipPath>
+</defs>
+</svg>

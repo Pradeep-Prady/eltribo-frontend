@@ -50,13 +50,13 @@ export default function ProdDispC({ data }) {
     dispatch(ProductsSet(data));
   }, [1]);
 
-  const paperbag = product.filter(
+  const paperbag = product?.filter(
     (p) => p.category === "671c6273125d2d215c495065"
   );
-  const teacub = product.filter(
+  const teacub = product?.filter(
     (p) => p.category === "671b6b68aaf504ceb9981b3b"
   );
-  const Napkins = product.filter(
+  const Napkins = product?.filter(
     (p) => p.category === "671c6a55a77c8836ae496382"
   );
 
