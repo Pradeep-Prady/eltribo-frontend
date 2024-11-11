@@ -10,6 +10,8 @@ export default function RootLayout({ children }) {
     <html lang="en">
       <head>
         <Head />
+
+        
       </head>
       <body>
       {/* <ReduxndQueryWrapper>
