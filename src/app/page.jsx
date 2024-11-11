@@ -28,7 +28,7 @@ export default async function Home() {
   //   console.log('🚗', err);
   // }
 
-  if (response) {
+  // if (response) {
     return (
       <>
         <div className="bg-[#F1FFF9]">
@@ -39,7 +39,7 @@ export default async function Home() {
           <Support />
           <About />
           <ReduxndQueryWrapper>
-            <ProdDispC data={response.data.data} />
+            <ProdDispC data={response?.data?.data} />
           </ReduxndQueryWrapper>
 
           <Reviews />
@@ -66,5 +66,5 @@ export default async function Home() {
         </div> 
       </>
     );
-  }
+  // }
 }
