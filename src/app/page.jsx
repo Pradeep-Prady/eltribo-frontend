@@ -28,7 +28,7 @@ export default async function Home() {
   //   console.log('🚗', err);
   // }
 
-  // if (response) {
+  if (response) {
     return (
       <>
         <div className="bg-[#F1FFF9]">
@@ -48,11 +48,7 @@ export default async function Home() {
         </div>
         <Footer />
         <div classNam="fixed  w-full  flex items-end p-5 justify-end  z-[99999999] bottom-0 right-5">
-
-
-          
-
-        <div className="fixed z-[9999999999] text-white bottom-0 right-0 p-5">
+          <div className="fixed z-[9999999999] text-white bottom-0 right-0 p-5">
             <a
               href="https://wa.me/8148861438"
               target="_blank"
@@ -63,8 +59,8 @@ export default async function Home() {
               <p className="text-[14px]">Chat With Us</p>
             </a>
           </div>
-        </div> 
+        </div>
       </>
     );
-  // }
+  }
 }
