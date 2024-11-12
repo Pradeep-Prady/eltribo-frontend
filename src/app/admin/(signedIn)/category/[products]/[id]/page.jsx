@@ -30,6 +30,7 @@ export default function Page() {
 	const [fileArr1, setfileArr1] = useState();
 	const [fileArr2, setfileArr2] = useState();
 	const [categorySelect, setCategorySelect] = useState('');
+	const [specifications, setSpecifications] = useState([]);
 
 	const [imgE1, setImgE1] = useState();
 	const [imgE2, setImgE2] = useState();
@@ -42,7 +43,20 @@ export default function Page() {
 	}
 
 	const { register, handleSubmit, getValues, setError, formState: { errors }, reset } = useForm();
-
+	const handleAddSpecification = () => {
+		setSpecifications([...specifications, { key: "", value: "" }]);
+	  };
+	
+	  const handleSpecificationChange = (index, field, value) => {
+		const updatedSpecs = [...specifications];
+		updatedSpecs[index][field] = value;
+		setSpecifications(updatedSpecs);
+	  };
+	
+	  const handleRemoveSpecification = (index) => {
+		const updatedSpecs = specifications.filter((_, i) => i !== index);
+		setSpecifications(updatedSpecs);
+	  };
 	function Submit(form) {
 		const formData = new FormData();
 		if (form.name == '' || form.description == '' || form.cost == '' || form.size == '') {
@@ -61,7 +75,13 @@ export default function Page() {
 					discount: {
 						percentage: form.percentage,
 						cost: disC
-					}
+					},
+					specifications: specifications.filter(
+						(spec) => spec.key && spec.value
+					  ),
+					  metaTitle: form.title,
+					  metaDescription: form.metaDescription,
+					  metaKeywords: form.keywords ,
 				}))
 			}
 			else {
@@ -71,6 +91,12 @@ export default function Page() {
 					size: form.size,
 					cost: form.cost,
 					category: categorySelect,
+					specifications: specifications.filter(
+						(spec) => spec.key && spec.value
+					  ),
+					  metaTitle: form.title,
+					  metaDescription: form.metaDescription,
+					  metaKeywords: form.keywords ,
 				}));
 			}
 			if (form.images?.length) {
@@ -85,20 +111,37 @@ export default function Page() {
 	const store = useSelector((state) => state.prodR);
 
 	useEffect(() => {
-		console.log('🚗🚗🚗🚗🚗🚗🚗🚗🚗🚗🚗🚗🚗🚗🚗🚗🚗🚗', store);
-		setCategorySelect(store.category._id);
+		setCategorySelect(store?.category?._id);
 	}, [store])
 
 	useEffect(() => {
 		mutate();
 	}, [1]);
 
+	// const { mutate, isLoading, isSuccess, error, data } = useMutation(async () => {
+	// 	const f = await bkend.get(`/getoneproduct/${store.id}`);
+	// 	setProduct(f.data.data);
+	// 	if (f.data.data.discount !== '') calcDiscount(f.data.data.discount.percentage, f.data.data.cost);
+	// 	setImages(f.data.data.img.slice(1)); setTopImg([f.data.data.img[0]]);
+	// 	setSpecifications(f.data.data.specifications)
+	// });
 	const { mutate, isLoading, isSuccess, error, data } = useMutation(async () => {
 		const f = await bkend.get(`/getoneproduct/${store.id}`);
-		setProduct(f.data.data);
-		if (f.data.data.discount !== '') calcDiscount(f.data.data.discount.percentage, f.data.data.cost);
-		setImages(f.data.data.img.slice(1)); setTopImg([f.data.data.img[0]]);
+		const productData = f.data.data;
+	
+		// Remove _id from each specification before setting it
+		const cleanedSpecifications = productData.specifications.map(spec => {
+			const { _id, ...cleanedSpec } = spec; // Destructure and remove _id
+			return cleanedSpec;
+		});
+	
+		setProduct(productData);
+		if (productData.discount !== '') calcDiscount(productData.discount.percentage, productData.cost);
+		setImages(productData.img.slice(1));
+		setTopImg([productData.img[0]]);
+		setSpecifications(cleanedSpecifications); // Set cleaned specifications
 	});
+	
 
 	const { mutate: upM, isLoading: upL, isSuccess: upS, error: upE, data: upD } = useMutation(async (form) => {
 		console.log('clicked');
@@ -295,7 +338,100 @@ return (
 			</li>
 		<p>{imgE2}</p>			
 		</div>
-	</main>			
+	</main>		
+
+	 {/* Specifications Section */}
+            <main className="flex flex-col w-full px-4 py-3 bg-white rounded-lg mb-5">
+              <h1 className={`${roboto.className} text-xl`}>Specifications</h1>
+              {specifications.map((spec, index) => (
+                <div key={index} className="flex gap-2 mt-3">
+                  <input
+                    type="text"
+                    placeholder="Specification Key"
+                    className="w-1/2 rounded-lg bg-[#f8fafc] border-[1px] border-[rgb(175,173,173)] mt-1 py-2 pl-3"
+                    value={spec.key}
+                    onChange={(e) =>
+                      handleSpecificationChange(index, "key", e.target.value)
+                    }
+                  />
+                  <input
+                    type="text"
+                    placeholder="Specification Value"
+                    className="w-1/2 rounded-lg bg-[#f8fafc] border-[1px] border-[rgb(175,173,173)] mt-1 py-2 pl-3"
+                    value={spec.value}
+                    onChange={(e) =>
+                      handleSpecificationChange(index, "value", e.target.value)
+                    }
+                  />
+                  <button
+                    type="button"
+                    className="text-red-500"
+                    onClick={() => handleRemoveSpecification(index)}
+                  >
+                    Remove
+                  </button>
+                </div>
+              ))}
+              <button
+                type="button"
+                className="mt-3 bg-blue-500 text-white px-4 py-2 rounded-lg"
+                onClick={handleAddSpecification}
+              >
+                Add Specification
+              </button>
+            </main>	
+
+			  {/* Additional SEO fields */}
+			  <main className="flex flex-col w-full px-4 py-3 bg-white rounded-lg mt-4">
+              <h1 className={`${roboto.className} text-xl`}>SEO Information</h1>
+              
+              <li className="mt-3">
+                <label className="text-[rgb(136,135,135)]">Meta Title</label>
+                <br />
+                <input
+                  type="text"
+                  className="w-full rounded-lg bg-[#f8fafc] border-[1px] border-[rgb(175,173,173)] mt-1 py-2 pl-3"
+                 
+
+				  {...register('title', {required: 'title cannot be empty'})} defaultValue={product.metaTitle}
+                />
+                <p>{errors?.title?.message}</p>
+              </li>
+              <li className="mt-3">
+                <label className="text-[rgb(136,135,135)]">
+                  Meta Description
+                </label>
+                <br />
+                <textarea
+                  type="text"
+                  className="w-full rounded-lg bg-[#f8fafc] border-[1px] border-[rgb(175,173,173)] mt-1 py-2 pl-3 resize-none h-[100px]"
+                  {...register("metaDescription", {
+                    required: "metaDescription cannot be empty",
+					
+                  })}
+
+				  defaultValue={product.metaDescription}
+                />
+                <p>{errors?.metaDescription?.message}</p>
+              </li>
+              <li className="mt-3">
+                <label className="text-[rgb(136,135,135)]">Meta Keywords</label>
+                <br />
+                <input
+                  type="text"
+                  className="w-full rounded-lg bg-[#f8fafc] border-[1px] border-[rgb(175,173,173)] mt-1 py-2 pl-3"
+                  {...register("keywords", {
+                    required: "Keywords cannot be empty",
+					
+                  })}
+
+				  defaultValue={product.metaKeywords}
+                />
+                <p>{errors?.metaKeywords?.message}</p>
+              </li>
+            </main>
+
+
 	<div className='flex justify-center my-5'>
 		<input type='submit' value='Update Product' className={`px-20 py-4 rounded-lg bg-[#ffd600] ${roboto.className} m-auto`} />
 	</div>			
@@ -306,60 +442,4 @@ return (
 }
 }
 
-
-{/* <div className='mt-[10px] relative'>
-	<button onClick={()=> setDeleted(true)} className='py-3 ml-[13px] rounded-lg border-2 px-10 border-[#405a00]'>Delete</button>	
-	<aside className={`absolute w-[500px] inset-0 text-[#505050] m-auto z-20 p-5 bg-white h-fit rounded-lg ${deleted ? 'block' : 'hidden'}`}>
-			<h1 className='mt-4 font-extrabold text-xl'>Delete Product</h1>
-			<p className='mt-2'>Are you sure you want to delete this product? By clicking yes this products Images and product details will be deleted</p>
-			<div className='flex mt-10 justify-evenly'>
-				<button className='rounded-lg border-2 border-[#505050] py-2 px-10' onClick={()=> setDeleted(false)}>Cancel</button>	
-				<button className='bg-[#157ff5] text-white rounded-lg py-2 px-10' onClick={() => delM()}>Delete Product</button>
-			</div>
-	</aside>
-	<main className={`flex mt-[10px] w-[97.5%] bg-white mx-3 p-5 rounded-3xl -z-20 ${deleted ? 'opacity-50' : 'opacity-100'}`}>
-	<section className='flex items-center h-full'>
-
-	<div className='flex flex-col'>
-		
-		<div className='h-[350px] flex flex-col gap-y-2 justify-center w-[150px] ml-5  overflow-y-auto'>
-			{product.img.map((i, j)=> (
-				<div className='relative h-[100px] w-full flex-shrink-0' key={j} onClick={() => setCarousal(j)}><Image src={i} fill alt='img' /></div>
-			))}
-		</div>
-	</div>
-				
-	<div className='h-[500px] w-[400px] ml-10 z-10 flex flex-col'>
-		<Carousel responsive={responsive} ref={CarousalRef} >
-		{product.img.map((i, j)=> (
-			<div className='relative h-[500px] w-full' key={j}><Image alt='img' src={i} fill className='rounded-xl' /></div>
-		))}		
-		</Carousel>
-		<button className='flex bg-[#ed492b] text-white items-center py-3 px-5 rounded-lg self-center mt-2' onClick={()=> IdelM()}>
-			<p className='mr-2'>Image</p>
-			<div>
-				<MdDeleteOutline className='text-xl' />
-			</div>				
-		</button>				
-	</div>
-
-	</section>
-
-	<div>
-		<form onSubmit={handleSubmit(Submit)} className='flex flex-col ml-10 gap-y-3'>
-			<label>Name</label>
-			<input type='text' {...register('name', {required: true})} className='w-[300px] rounded-lg border-2 border-[#dcdcdc] text-lg py-2 pl-2' defaultValue={product.name} />
-			<label>Description</label>
-			<input type='text' {...register('description')} className='w-[300px] rounded-lg border-2 border-[#dcdcdc] text-lg py-2 pl-2' defaultValue={product.description} />
-			<label>Size</label>
-			<input type='text' {...register('size')} className='w-[300px] rounded-lg border-2 border-[#dcdcdc] text-lg py-2 pl-2' defaultValue={product.size} />
-			<label>Cost</label>
-			<input type='text' {...register('cost')} className='w-[300px] rounded-lg border-2 border-[#dcdcdc] text-lg py-2 pl-2' defaultValue={product.cost} />
-			<input type='file' {...register('images')} multiple className='w-[300px] rounded-lg border-2 border-[#dcdcdc] text-lg py-2 pl-2' />
-			{errors.form && <p className='text-red-500'>{errors.form.message}</p>}	
-			<input type='submit' value='Update Product' className='py-2 bg-[#34bea4] text-white text-xl mt-5 rounded-lg' />
-		</form>
-	</div>
-			
-	</main>
-</div> */}
+ 

@@ -63,7 +63,7 @@ import { SlArrowRight } from "react-icons/sl";
 import { useEffect, useState } from 'react';
 import ImageC from '../utils/ImageC';
 import Link from 'next/link';
-
+import Image from 'next/image'
 export default function BreadCrumb() {
 	const [crumbs, setCrumbs] = useState([]);
 
@@ -91,8 +91,12 @@ export default function BreadCrumb() {
 	}
 
 	return (
-		<section className="relative w-full ">
-			<ImageC src={imageSrc} styles="w-[100%] h-[12rem]" />
+		<section 
+			className="relative w-full h-[12rem]" 
+			style={{ backgroundImage: `url(/images/${imageSrc})`, backgroundSize: 'cover', backgroundPosition: 'center' }}
+		>
+			{/* <ImageC src={imageSrc} styles="w-[100%] h-[12rem]" /> */}
+			{/* <Image src={`/images/${imageSrc?.src}`} className="w-[100%] h-[25rem] md:h-[12rem]" width={100} height={100} /> */}
 			<main className="absolute FullCover FColC gap-3">
 				<h1 className="text-[2.1rem] font-pMedium">Products</h1>
 				<ul className="FRowC py-[0.3rem] px-[3rem] gap-2">

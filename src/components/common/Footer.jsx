@@ -16,6 +16,7 @@ export default function Footer() {
     {
       name: "INFORMATION",
       values: [
+        
         { name: "Our Story", link: "/about-us" },
         { name: "Returns and Refunds", link: "" },
         { name: "Terms Of Service", link: "" },
@@ -70,7 +71,7 @@ export default function Footer() {
       <Image
         src={footerImage?.src}
         alt="logo"
-        className="w-[500px] scale-[1.3] h-full absolute"
+        className="w-[500px] scale-[1.3] h-full absolute pointer-events-none"
         width={100}
         height={100}
       />
