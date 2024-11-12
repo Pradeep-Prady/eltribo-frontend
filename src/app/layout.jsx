@@ -1,4 +1,4 @@
-"use client"
+// "use client"
 import Head from "@/components/utils/Head";
 import "../styles/fonts.css";
 import "../styles/globals.css";
@@ -19,7 +19,8 @@ export default function RootLayout({ children }) {
         <Header />
       </ReduxndQueryWrapper> */}
 
-        <Provider store={store}>{children}</Provider>
+        {/* <Provider store={store}>{children}</Provider> */}
+     {children} 
 
         {/* <Footer /> */}
 
