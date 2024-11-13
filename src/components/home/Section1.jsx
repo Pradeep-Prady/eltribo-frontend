@@ -55,19 +55,19 @@ export default function Section1() {
 				</Link>
 			</div>
 			<div className="relative">
-				<ImageC src={'carousal/Carousal4.svg'} styles={'w-[1300px w-full h-[200px] md:h-[740px]'} />
+				<ImageC src={'carousal/Carousal4.jpg'} styles={'w-[1300px w-full h-[200px] md:h-[740px]'} />
 				<Link href={'/Biscuit%20Tea%20Cups'}>
 					<button className="absolute top-[62%] left-[3%] w-[180px] h-[60px]"></button>
 				</Link>
 			</div>
 			<div className="relative">
-				<ImageC src={'carousal/Carousal3.svg'} styles={'w-full h-[200px] md:h-[740px]'} />
+				<ImageC src={'carousal/Carousal3.jpg'} styles={'w-full h-[200px] md:h-[740px]'} />
 				<Link href={'/Paper%20Bags'}>
 					<button className="absolute top-[84%] left-[44%] w-[180px] h-[60px]"></button>
 				</Link>
 			</div>
 			<div className="relative">
-				<ImageC src={'carousal/Carousal2.svg'} styles={'w-[1300px w-full h-[200px] md:h-[740px]'} />
+				<ImageC src={'carousal/Carousal2.jpg'} styles={'w-[1300px w-full h-[200px] md:h-[740px]'} />
 				<Link href={'/Napkins'}>
 					<button className="absolute top-[60%] left-[2%] w-[180px] h-[60px]"></button>
 				</Link>
