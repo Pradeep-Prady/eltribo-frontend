@@ -40,9 +40,9 @@ export default function DropDownC({
 
   if (heading && body) {
     return (
-      <main className={`${main.tw}  select-none `}>
+      <main className={`${main.tw} !px-0 select-none `}>
         <div
-          className={` ${heading.tw} flex items-center gap-2`}
+          className={` ${heading.tw} !px-0 flex items-start  `}
           onClick={() => setDisp(() => !disp)}
         >
           {headingText ? headingText : heading.text}

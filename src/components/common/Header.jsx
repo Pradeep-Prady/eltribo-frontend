@@ -395,7 +395,7 @@ export default function Header() {
               <li className=" flex flex-col gap-5 items-start text-[#1D1B20]">
                 {data?.map((item) =>
                   item.id === 3 ? (
-                    <div key={item.id}>
+                    <div className="w-full  flex items-start" key={item.id}>
                       <DropDownC
                         options={objVal}
                         disp={disp}
