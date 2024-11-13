@@ -2,7 +2,7 @@
 
 import { useEffect, useState } from "react";
 import { IoIosArrowDown } from "react-icons/io";
-
+import Link from 'next/link'
 export default function DropDownC({
   validate,
   options: { main, heading, body },
@@ -57,6 +57,7 @@ export default function DropDownC({
           {Object.entries(body.items).map((i, j) =>
             validate === "dontCheck" ? (
               <li
+               
                 key={j}
                 onClick={() => {
                   i[1]?.data ? i[1].click(i[1].data) : "";
@@ -64,7 +65,10 @@ export default function DropDownC({
                 }}
                 className={body.itemstw}
               >
+                <Link
+              href={i[1].text}>
                 {i[1].text}
+                </Link>
               </li>
             ) : (
               <li key={j} className={body.itemstw}>

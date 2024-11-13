@@ -19,15 +19,9 @@ export default function ProductMap(props) {
   useEffect(() => {
     setUrl(params.products.replace(/%20/g, " "));
   }, [params]);
+ 
 
-  useEffect(() => {
-    // console.log('😇', url.replace(/%20/g, ' '));
-    console.log("👩", url);
-  }, [url]);
-
-  useEffect(() => {
-    // setUrl(window.location.href.split('/'));
-  }, []);
+ 
 
   const dispatch = useDispatch();
 

@@ -1,12 +1,14 @@
 "use client";
 
 import { useDispatch, useSelector } from "react-redux";
-import ProdDisp from "../home/ProdDisp";
+ 
 import { useEffect, useState } from "react";
 import { prodSet } from "@/redux/slice/ProductSlice";
 import { ProductsSet } from "@/redux/slice/ProdsSlice";
 import { useMutation } from "react-query";
-import { bkend } from "../../axios/axiosInstance";
+import { bkend } from "@/axios/axiosInstance";
+import ProdDisp from "../home/ProdDisp";
+ 
 
 export default function ProdDispC({ data }) {
   const { product } = useSelector((store) => store.ProdsS);

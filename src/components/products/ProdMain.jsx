@@ -47,19 +47,24 @@ export default function ProdMain() {
 		return (
 			<main className='FCol gap-[0.8rem] font-pRegular w-[42rem]'>
 				<h1 className='text-[1.7rem] text-[#1D1B20]'>{info.name}</h1>
-				<h2 className='text-[1rem] text-[#938F96]'>{info.des}</h2>
+				<h2 className='text-[1rem] text-[#938F96] line-clamp-2'>{info.description}</h2>
 				<h2 className='text-[1.5rem]'>Rs.{info.cost}</h2>
-				<h2 className='text-[1.2rem] text-[#48464C]'>Quantity</h2>
+				{/* <h2 className='text-[1.2rem] text-[#48464C]'>Quantity</h2> */}
 				<section className='flex flex-wrap gap-[1rem]'>
-					<Quantity quantity={quantity} minus={() => quantity > 1 && setQuantity((l) => --l)} plus={() => setQuantity((l) => ++l)} />
+					{/* <Quantity quantity={quantity} minus={() => quantity > 1 && setQuantity((l) => --l)} plus={() => setQuantity((l) => ++l)} /> */}
 					<GreenButton text = 'Inquire Now' click = {toggleInq} />
 					<InquireForm disp = {inqDisp} toggleInq = {toggleInq} setThankyou = {setThankyou} quantity = {quantity} />
 				</section>
 				<h3>Product Specification</h3>
 				<ul className='text-[#79767D] FCol gap-[0.5rem]'>
-					{Object.entries(prodd.prodSpe).map((i, j) => (
+					{/* {Object.entries(prodd.prodSpe).map((i, j) => (
 						<li className="">{i[0]}: {i[1]}</li>
-					))}
+					))} */}
+					{
+						info.specifications?.map((spec,i)=>(
+							<li key={i} className="">{spec?.key}: {spec?.value}</li>
+						))
+					}
 				</ul>
 				<aside>
 					<ThankYou thankyou={thankyou} />

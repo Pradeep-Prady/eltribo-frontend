@@ -16,7 +16,6 @@ export default function Footer() {
     {
       name: "INFORMATION",
       values: [
-        
         { name: "Our Story", link: "/about-us" },
         { name: "Returns and Refunds", link: "" },
         { name: "Terms Of Service", link: "" },
@@ -56,7 +55,7 @@ export default function Footer() {
         },
         {
           img: "whatsApp.svg",
-          link: "https://www.facebook.com/profile.php?id=61567058990559",
+          link: "https://wa.me/8148861438",
         },
         {
           img: "youTube.svg",
@@ -98,7 +97,11 @@ export default function Footer() {
                 <>
                   <aside className="flex gap-2">
                     {i.icons.map((i, j) => (
-                      <a href={i?.link} target="_blank">
+                      <a
+                        href={i?.link}
+                        target="_blank"
+                        rel="noopener noreferrer"
+                      >
                         <ImageC
                           src={`/social/${i?.img}`}
                           styles="h-[33px] w-[33px]"

@@ -17,7 +17,7 @@
 // 	}));
 
 // 	console.log('crumbs', crumbs);
-	
+
 // 	const link = window.location.pathname.split('/').map((i, j, arr) => {
 // 		if (j === 0) return '/';
 // 		if (j === arr.length - 1) return i;
@@ -28,9 +28,9 @@
 // 		return array[j - 1] + i;
 // 	})
 // 	console.log('💑', link);
-	
+
 // 	// return arr[j - 1] + i;
-	
+
 // 	useEffect(() => {
 // 		console.log('👘', crumbs);
 // 	}, [])
@@ -57,59 +57,159 @@
 // 	}
 // }
 
- 'use client';
+// "use client";
+
+// import { SlArrowRight } from "react-icons/sl";
+// import { useEffect, useState } from "react";
+// import ImageC from "../utils/ImageC";
+// import Link from "next/link";
+// import Image from "next/image";
+// export default function BreadCrumb() {
+//   const [crumbs, setCrumbs] = useState([]);
+
+//   useEffect(() => {
+//     const pathArray = window.location.pathname.split("/").filter(Boolean);
+//     const formattedCrumbs = pathArray.map((item, index) => {
+//       // Decode URL component and capitalize
+//       const formattedItem = decodeURIComponent(
+//         item.charAt(0).toUpperCase() + item.slice(1)
+//       );
+//       return {
+//         name: formattedItem,
+//         url: "/" + pathArray.slice(0, index + 1).join("/"),
+//       };
+//     });
+//     setCrumbs([{ name: "Home", url: "/" }, ...formattedCrumbs]);
+//   }, []);
+
+//   // Check for specific items in crumbs to determine the image to display
+//   let imageSrc = "lines/BreadCrumbC.svg";
+//   if (crumbs.some((crumb) => crumb.name === "Biscuit Tea Cups")) {
+//     imageSrc = "lines/BreadCrumbBiscut.svg";
+//   } else if (crumbs.some((crumb) => crumb.name === "Napkins")) {
+//     imageSrc = "lines/BreadCrumbNapkin.svg";
+//   } else if (crumbs.some((crumb) => crumb.name === "Paper Bags")) {
+//     imageSrc = "lines/BreadCrumbPaperBags.svg";
+//   }
+
+//   return (
+//     <section
+//       className="relative w-full h-[12rem]"
+//       style={{
+//         backgroundImage: `url(/images/${imageSrc})`,
+//         backgroundSize: "cover",
+//         backgroundPosition: "center",
+//       }}
+//     >
+//       {/* <ImageC src={imageSrc} styles="w-[100%] h-[12rem]" /> */}
+//       {/* <Image src={`/images/${imageSrc?.src}`} className="w-[100%] h-[25rem] md:h-[12rem]" width={100} height={100} /> */}
+//       <main className="absolute FullCover FColC gap-3">
+//         <h1 className="text-[2.1rem] font-pMedium">
+//           {crumbs[crumbs.length - 1]?.name === "About-us"
+//             ? "About Us"
+//             : "Products"}
+//         </h1>
+//         <ul className="FRowC py-[0.3rem] px-[3rem] gap-2">
+//           {crumbs.map((crumb, index) => (
+//             <li key={index} className="flex items-center">
+//               <Link href={crumb.url} className="">
+//                 {crumb.name}
+//               </Link>
+//               {index < crumbs.length - 1 && (
+//                 <span className="mx-2">
+//                   <SlArrowRight />
+//                 </span>
+//               )}
+//             </li>
+//           ))}
+//         </ul>
+//       </main>
+//     </section>
+//   );
+// }
+ 
+
+
+
+
+
+
+
+
+
+
+"use client";
 
 import { SlArrowRight } from "react-icons/sl";
-import { useEffect, useState } from 'react';
-import ImageC from '../utils/ImageC';
-import Link from 'next/link';
-import Image from 'next/image'
+import { useEffect, useState } from "react";
+import Link from "next/link";
+
 export default function BreadCrumb() {
-	const [crumbs, setCrumbs] = useState([]);
+  const [crumbs, setCrumbs] = useState([]);
 
-	useEffect(() => {
-		const pathArray = window.location.pathname.split('/').filter(Boolean);
-		const formattedCrumbs = pathArray.map((item, index) => {
-			// Decode URL component and capitalize
-			const formattedItem = decodeURIComponent(item.charAt(0).toUpperCase() + item.slice(1));
-			return {
-				name: formattedItem,
-				url: '/' + pathArray.slice(0, index + 1).join('/'),
-			};
-		});
-		setCrumbs([{ name: 'Home', url: '/' }, ...formattedCrumbs]);
-	}, []);
+  useEffect(() => {
+    if (typeof window !== "undefined") {
+      const pathArray = window.location.pathname.split("/").filter(Boolean);
+      
+      // If on the Products page, set crumbs to only "Home > Products"
+      if (pathArray[0]?.toLowerCase() === "products" && pathArray.length === 1) {
 
-	// Check for specific items in crumbs to determine the image to display
-	let imageSrc = "lines/BreadCrumbC.svg";
-	if (crumbs.some(crumb => crumb.name === 'Biscuit Tea Cups')) {
-		imageSrc = "lines/BreadCrumbBiscut.svg";
-	} else if (crumbs.some(crumb => crumb.name === 'Napkins')) {
-		imageSrc = "lines/BreadCrumbNapkin.svg";
-	} else if (crumbs.some(crumb => crumb.name === 'Paper Bags')) {
-		imageSrc = "lines/BreadCrumbPaperBags.svg";
-	}
+        console.log('product crump')
+        setCrumbs([{ name: "Home", url: "/" }, { name: "Products", url: "/products" }]);
+      } else {
+        // Otherwise, construct the breadcrumbs as usual
+        const formattedCrumbs = pathArray.map((item, index) => {
+          const formattedItem = decodeURIComponent(
+            item.charAt(0).toUpperCase() + item.slice(1)
+          );
+          return {
+            name: formattedItem,
+            url: "/" + pathArray.slice(0, index + 1).join("/"),
+          };
+        });
+        setCrumbs([{ name: "Home", url: "/" }, ...formattedCrumbs]);
+      }
+    }
+  }, [typeof window !== "undefined" && window.location.pathname]);
 
-	return (
-		<section 
-			className="relative w-full h-[12rem]" 
-			style={{ backgroundImage: `url(/images/${imageSrc})`, backgroundSize: 'cover', backgroundPosition: 'center' }}
-		>
-			{/* <ImageC src={imageSrc} styles="w-[100%] h-[12rem]" /> */}
-			{/* <Image src={`/images/${imageSrc?.src}`} className="w-[100%] h-[25rem] md:h-[12rem]" width={100} height={100} /> */}
-			<main className="absolute FullCover FColC gap-3">
-				<h1 className="text-[2.1rem] font-pMedium">Products</h1>
-				<ul className="FRowC py-[0.3rem] px-[3rem] gap-2">
-					{crumbs.map((crumb, index) => (
-						<li key={index} className="flex items-center">
-							<Link href={crumb.url} className="">
-								{crumb.name}
-							</Link>
-							{index < crumbs.length - 1 && <span className="mx-2"><SlArrowRight/></span>}
-						</li>
-					))}
-				</ul>
-			</main>
-		</section>
-	);
+  // Determine image source based on crumbs content
+  let imageSrc = "lines/BreadCrumbC.svg";
+  if (crumbs.some((crumb) => crumb.name === "Biscuit Tea Cups")) {
+    imageSrc = "lines/BreadCrumbBiscut.svg";
+  } else if (crumbs.some((crumb) => crumb.name === "Napkins")) {
+    imageSrc = "lines/BreadCrumbNapkin.svg";
+  } else if (crumbs.some((crumb) => crumb.name === "Paper Bags")) {
+    imageSrc = "lines/BreadCrumbPaperBags.svg";
+  }
+
+  return (
+    <section
+      className="relative w-full h-[12rem]"
+      style={{
+        backgroundImage: `url(/images/${imageSrc})`,
+        backgroundSize: "cover",
+        backgroundPosition: "center",
+      }}
+    >
+      <main className="absolute FullCover FColC gap-3">
+        <h1 className="text-[2.1rem] font-pMedium">
+          {crumbs[crumbs.length - 1]?.name === "About-us"
+            ? "About Us"
+            : "Products"}
+        </h1>
+        <ul className="FRowC py-[0.3rem] px-[3rem] gap-2">
+          {crumbs.map((crumb, index) => (
+            <li key={index} className="flex items-center">
+              <Link href={crumb.url}>{crumb.name}</Link>
+              {index < crumbs.length - 1 && (
+                <span className="mx-2">
+                  <SlArrowRight />
+                </span>
+              )}
+            </li>
+          ))}
+        </ul>
+      </main>
+    </section>
+  );
 }

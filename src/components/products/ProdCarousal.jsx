@@ -48,7 +48,7 @@ export default function ProdCarousal() {
             />
           ))}
         </section>
-        <section className="w-[95%] md:w-[23rem] h-[25.1rem] rounded-xl border-[1px] border-black max-sm:order-1 z-0">
+        <section className="w-[95%] md:w-[23rem] h-[25.1rem] rounded-xl overflow-clip border-[1px] border-black max-sm:order-1 z-0">
           <Carousel responsive={responsive} ref={carousal}>
             {first.img.map((i, j) => (
               <ImageC key={j} src={i} styles="h-[25rem] rounded-xl" />

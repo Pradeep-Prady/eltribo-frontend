@@ -30,7 +30,7 @@ export function GreenBorder(props) {
   return (
     <button
       className={
-        " md:py-[0.8rem] px-[1rem] md:px-[1.5rem]  border-[0.88px] rounded-full w-fit border-[#1A5319] font-pRegular text-greenB text-[0.85rem]"
+        "py-[0.8rem] md:py-[0.8rem] px-[1rem] md:px-[1.5rem]  border-[0.88px] rounded-full w-fit border-[#1A5319] font-pRegular text-greenB text-[0.85rem]"
       }
     >
       {props.text}

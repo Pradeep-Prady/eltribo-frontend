@@ -1,6 +1,6 @@
 
-export default function Disp1() {
-	return (
-		<div>Disp1</div>
-	)
-}
+// export default function Disp1() {
+// 	return (
+// 		<div>Disp1</div>
+// 	)
+// }

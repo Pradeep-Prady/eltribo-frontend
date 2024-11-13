@@ -11,7 +11,7 @@ import { bkend } from '@/axios/axiosInstance';
 
 const roboto = Roboto({ subsets: ['latin'], weight: ['400'] });
 
-export default function page() {
+  function page() {
 
 	const dispatch = useDispatch();
 	const s = useSelector((store) => store.prodR);
@@ -50,3 +50,6 @@ export default function page() {
 		)
 	}
 }
+
+
+export default page;
