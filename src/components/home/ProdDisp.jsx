@@ -4,6 +4,7 @@ import { useSelector } from "react-redux";
 import ImageC from "../utils/ImageC";
 import ProductItem from "../products/ProductItem";
 import { GreenTextButton } from '@/app/components/common/greenButton';
+import Link from "next/link";
  
 export default function ProdDisp({ heading, productData, img, text, Static }) {
   const { product } = useSelector((store) => store.ProdsS);
@@ -58,7 +59,10 @@ export default function ProdDisp({ heading, productData, img, text, Static }) {
 
         {!Static && (
           <div className="w-full flex justify-center my-[3.5rem]">
+            <Link href={heading}>
+            
             <GreenTextButton text={"View More"} />
+            </Link>
           </div>
         )}
       </main>

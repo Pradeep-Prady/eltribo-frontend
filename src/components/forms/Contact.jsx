@@ -11,22 +11,32 @@ export default function ContactForm() {
     register,
     handleSubmit,
     formState: { errors },
-    watch,
-    setValue,
+    reset, // <-- Import reset function
   } = useForm({
     resolver: zodResolver(ContactEnqSchema),
     defaultValues: {
       name: "",
       mail: "",
-      phno: null,
+      phno: "",
       message: "",
     },
   });
 
   async function SendConEnq(data) {
-    console.log(data);
-    const f = await bkend.post("/contact", data);
-    console.log("🚀 ~ SendConEnq ~ f:", f.data);
+    try {
+      const f = await bkend.post("/contact", data);
+      console.log("🚀 ~ SendConEnq ~ f:", f.data);
+      
+      // Clear the form on successful submission
+      reset(); // Reset the form fields to default values
+
+    } catch (error) {
+      if (error.response) {
+        console.error("Backend validation error:", error.response.data);
+      } else {
+        console.error("Request error:", error.message);
+      }
+    }
   }
 
   function Submit(formD) {
@@ -55,7 +65,7 @@ export default function ContactForm() {
             />
             <input
               {...register("phno")}
-              type="number"
+              type="text"
               placeholder="Phone"
               className="inpContact !w-full"
             />
