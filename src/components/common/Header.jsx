@@ -402,6 +402,7 @@ export default function Header() {
                         setDisp={setDisp}
                         validate={"dontCheck"}
                         items={items}
+                        paddStyle
                       />
                     </div>
                   ) : (

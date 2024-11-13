@@ -163,6 +163,7 @@ export default function InquireForm({
               disp={dispD}
               setDisp={setDispD}
               validate={"check"}
+           
             />
             <textarea
               type="text"
